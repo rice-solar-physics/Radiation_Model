@@ -59,6 +59,7 @@ void CElement::SetConfigVars(TiXmlElement *root)
 	cutoff_ion_fraction = atof(check_element(recursive_read(root,"cutoff_ion_fraction"),"cutoff_ion_fraction")->GetText());
 	epsilon_d = atof(check_element(recursive_read(root,"epsilon_d"),"epsilon_d")->GetText());
 	epsilon_r = atof(check_element(recursive_read(root,"epsilon_r"),"epsilon_r")->GetText());
+	max_optically_thin_density = atof(check_element(recursive_read(root,"max_optically_thin_density"),"max_optically_thin_density")->GetText());
 }
 
 void CElement::OpenRangesFile( char *szRangesFilename )
