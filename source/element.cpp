@@ -15,10 +15,10 @@
 #include <math.h>
 
 #include "element.h"
-#include "../../Resources/source/file.h"
-#include "../../Resources/source/fitpoly.h"
-#include "../../Resources/source/constants.h"
-#include "../../Resources/source/xmlreader.h"
+#include "../../rsp_toolkit/source/file.h"
+#include "../../rsp_toolkit/source/fitpoly.h"
+#include "../../rsp_toolkit/source/constants.h"
+#include "../../rsp_toolkit/source/xmlreader.h"
 
 
 CElement::CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename )
@@ -1234,6 +1234,81 @@ for( iIndex=0; iIndex<=Z; iIndex++ )
 
     if( TimeScale < SmallestTimeScale )
         SmallestTimeScale = TimeScale;
+}
+
+*pTimeScale = SmallestTimeScale;
+}
+
+void CElement::Getdnibydt( double flog_10T, double flog_10n, double *pni, double *pdnibydt, double *pTimeScale )
+{
+double ne, IonRate[2], RecRate[2], term2, term3, term4, term5, delta_t1, delta_t2, TimeScale, SmallestTimeScale;
+int iIndex, iSpecNum;
+
+// Calculate the electron number density
+ne = pow( 10.0, flog_10n );
+
+// Initialise the characteristic time-scales
+TimeScale = SmallestTimeScale = LONG_TIME_SCALE;
+
+if( flog_10n >= max_optically_thin_density )
+	for( iIndex=0; iIndex<=Z; iIndex++ )
+    {
+		pni[iIndex] = GetEquilIonFrac( iIndex+1, flog_10T );
+        pdnibydt[iIndex] = 0.0;
+    }
+else
+
+for( iIndex=0; iIndex<=Z; iIndex++ )
+{
+	// Reset the rates
+    IonRate[0] = IonRate[1] = 0.0;
+    RecRate[0] = RecRate[1] = 0.0;
+
+    iSpecNum = iIndex + 1;
+
+	if( iSpecNum > 1 )
+	{
+        GetRates( iSpecNum-1, flog_10T, &IonRate[0], &RecRate[0] );
+        term2 = pni[iIndex-1] * IonRate[0];
+    }
+	else
+        term2 = 0.0;
+	
+	if( iSpecNum < Z+1 )
+	{
+        GetRates( iSpecNum, flog_10T, &IonRate[1], &RecRate[1] );
+		term3 = pni[iIndex+1] * RecRate[1];
+	}
+	else
+        term3 = 0.0;
+	
+	term4 = - pni[iIndex] * ( IonRate[1] + RecRate[0] );
+
+	term5 = ne * ( term2 + term3 + term4 );
+
+	pdnibydt[iIndex] = term5;
+
+	if( term5 && pni[iIndex] > cutoff_ion_fraction )
+	{
+		term5 = fabs( term5 );
+
+		// epsilon_d = 0.1;
+		delta_t1 = safety_atomic * ( 0.1 / term5 );
+
+		// epsilon_r = 0.6
+		// |(10^-epsilon_r - 1.0)| = 0.748811357
+		// 10^epsilon_r - 1.0 = 2.981071706
+		// 0.748811357 + 2.981071706 = 3.729883062
+		// 0.5 * 3.729883062 = 1.864941531
+		delta_t2 = safety_atomic * 1.864941531 * ( pni[iIndex] / term5 );
+
+		TimeScale = min( delta_t1, delta_t2 );
+	}
+	else
+		TimeScale = LONG_TIME_SCALE;
+
+	if( TimeScale < SmallestTimeScale )
+		SmallestTimeScale = TimeScale;
 }
 
 *pTimeScale = SmallestTimeScale;

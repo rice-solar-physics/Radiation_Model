@@ -14,10 +14,10 @@
 #include <math.h>
 
 #include "radiation.h"
-#include "../../Resources/source/file.h"
-#include "../../Resources/source/fitpoly.h"
-#include "../../Resources/source/constants.h"
-#include "../../Resources/source/xmlreader.h"
+#include "../../rsp_toolkit/source/file.h"
+#include "../../rsp_toolkit/source/fitpoly.h"
+#include "../../rsp_toolkit/source/constants.h"
+#include "../../rsp_toolkit/source/xmlreader.h"
 
 
 CRadiation::CRadiation( char *szFilename )
@@ -475,6 +475,19 @@ if( i == NumElements ) return;
 ppElements[i]->Getdnibydt( flog_10T, flog_10n, pni0, pni1, pni2, pni3, pni4, s, s_pos, pv, delta_s, pdnibydt, pTimeScale );
 }
 
+void CRadiation::Getdnibydt( int iZ, double flog_10T, double flog_10n, double *pni, double *pdnibydt, double *pTimeScale )
+{
+int i;
+
+// Find the required element
+for( i=0; i<NumElements; i++ )
+	if( iZ == pZ[i] ) break;
+
+if( i == NumElements ) return;
+
+ppElements[i]->Getdnibydt( flog_10T, flog_10n, pni, pdnibydt, pTimeScale );
+}
+
 void CRadiation::GetAlldnibydt( double flog_10T, double flog_10n, double **ppni0, double **ppni1, double **ppni2, double **ppni3, double **ppni4, double *s, double *s_pos, double *pv, double delta_s, double **ppdnibydt, double *pTimeScale )
 {
 double TimeScale, SmallestTimeScale;
@@ -488,6 +501,24 @@ for( i=0; i<NumElements; i++ )
 
     if( TimeScale < SmallestTimeScale )
         SmallestTimeScale = TimeScale;
+}
+
+*pTimeScale = SmallestTimeScale;
+}
+
+void CRadiation::GetAlldnibydt( double flog_10T, double flog_10n, double **ppni, double **ppdnibydt, double *pTimeScale )
+{
+double TimeScale, SmallestTimeScale;
+int i;
+
+SmallestTimeScale = LONG_TIME_SCALE;
+
+for( i=0; i<NumElements; i++ )
+{
+    ppElements[i]->Getdnibydt( flog_10T, flog_10n, ppni[i], ppdnibydt[i], &TimeScale );
+
+	if( TimeScale < SmallestTimeScale )
+		SmallestTimeScale = TimeScale;
 }
 
 *pTimeScale = SmallestTimeScale;

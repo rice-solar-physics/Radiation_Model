@@ -15,9 +15,9 @@
 
 #include "ionfrac.h"
 #include "config.h"
-#include "../../Resources/source/file.h"
-#include "../../Resources/source/fitpoly.h"
-#include "../../Resources/source/xmlreader.h"
+#include "../../rsp_toolkit/source/file.h"
+#include "../../rsp_toolkit/source/fitpoly.h"
+#include "../../rsp_toolkit/source/xmlreader.h"
 
 
 CIonFrac::CIonFrac( CIonFrac *pIonFrac, char *szFilename, PRADIATION pRadiationObj )

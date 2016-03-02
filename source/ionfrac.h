@@ -18,15 +18,8 @@ class CIonFrac {
     // Pointer to a radiation object
     PRADIATION pRadiation;
 
-    // The number of elements for which ion fractional populations are available
-    int NumElements;
 	//Additional parameters
 	double cutoff_ion_fraction;
-
-    // Pointer to an array containing each element's atomic number.  The offset
-    // of the atomic number corresponds to the offset of the ionisation fraction
-    // object in the ppIonFrac array
-    int *pZ;
 
     // Pointer to an array of pointers containing the fractional populations of the
     // ions for each element at the current temperature
@@ -50,6 +43,14 @@ class CIonFrac {
 	
     // Destructor
     ~CIonFrac( void );
+	
+    // The number of elements for which ion fractional populations are available
+    int NumElements;
+	
+    // Pointer to an array containing each element's atomic number.  The offset
+    // of the atomic number corresponds to the offset of the ionisation fraction
+    // object in the ppIonFrac array
+    int *pZ;
 
     // Functions to return a pointer to the fractional populations of the ions
     // at the current temperature

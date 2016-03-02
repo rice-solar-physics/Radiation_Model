@@ -87,8 +87,11 @@ class CRadiation {
 
     // Functions to calculate the rate of change with respect to time of the fractional
     // populations of the ions and the characteristic time-scale
+	// Overload for use in IonPopSolver code
     void Getdnibydt( int iZ, double flog_10T, double flog_10n, double *pni0, double *pni1, double *pni2, double *pni3, double *pni4, double *s, double *s_pos, double *pv, double delta_s, double *pdnibydt, double *pTimeScale );
+	void Getdnibydt( int iZ, double flog_10T, double flog_10n, double *pni, double *pdnibydt, double *pTimeScale );
     void GetAlldnibydt( double flog_10T, double flog_10n, double **ppni0, double **ppni1, double **ppni2, double **ppni3, double **ppni4, double *s, double *s_pos, double *pv, double delta_s, double **ppdnibydt, double *pTimeScale );
+	void GetAlldnibydt( double flog_10T, double flog_10n, double **ppni, double **ppdnibydt, double *pTimeScale );
 
     // Functions to calculate the amount of energy radiated in nonequilibrium
     double GetRadiation( int iZ, int iIon, double flog_10T, double flog_10n, double ni );
