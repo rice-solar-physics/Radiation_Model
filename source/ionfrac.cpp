@@ -53,7 +53,7 @@ if( !pIonFrac )
 	}
 	
 	//Get document root
-	tinyxml2::Element *root = doc.FirstChildElement();
+	tinyxml2::XMLElement *root = doc.FirstChildElement();
 	
 	//Read in parameters
 	cutoff_ion_fraction = atof(check_element(recursive_read(root,"cutoff_ion_fraction"),"cutoff_ion_fraction")->GetText());
