@@ -63,6 +63,8 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	
 	//Set DB filename for use outside of radiation class
 	sprintf(atomicDBFilename,"%s",szAtomicDBFilename);
+	//Set emission calculation bool for use in IonPopSolver
+	do_emiss_calc = doEmissCalc;
 	
 	//Allocate memory for array of element objects
 	ppElements = (PPELEMENT)malloc( sizeof( CElement ) * NumElements ); // Allocate sufficient memory to hold the pointers to each element object
@@ -87,7 +89,7 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	    sprintf( szRatesFilename,"%s%s.rts",tempRates,tempSymb);
 	    sprintf( szIonFracFilename,"%s%s.bal",tempBalances,tempSymb);
 	    // Instantiate each element object
-	    ppElements[i] = new CElement( pZ[i], szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename, doEmissCalc );
+	    ppElements[i] = new CElement( pZ[i], szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename, do_emiss_calc );
 		// Set initial configuration elements from file
 		ppElements[i]->SetConfigVars(root);
 		//Increment counter
@@ -101,7 +103,7 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	OpenRangesFile( szRangesFilename );
 	
 	// Calculate the total phi of all radiating elements as a function of temperature and density
-	if(doEmissCalc)
+	if(do_emiss_calc)
 	{
 		CalculateTotalPhi();
 	}
@@ -176,7 +178,10 @@ void CRadiation::FreeAll( void )
 {
 int i;
 
-free( pTotalPhi );
+if(do_emiss_calc)
+{
+	free( pTotalPhi );
+}
 
 free( pDen );
 free( pTemp );

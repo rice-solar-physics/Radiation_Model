@@ -36,17 +36,20 @@ void CElement::Initialise( int iZ, char *szRangesFilename, char *szAbundFilename
 // Set the atomic number of the element
 Z = iZ;
 
+// Set emission calc bool for use in IonPopSolver
+do_emiss_calc = doEmissCalc;
+
 // Open the data files and initialise the element
 OpenRangesFile( szRangesFilename );
 OpenAbundanceFile( szAbundFilename );
-if(doEmissCalc)
+if(do_emiss_calc)
 {
 	OpenEmissivityFile( szEmissFilename );
 }
 OpenRatesFile( szRatesFilename );
 OpenIonFracFile( szIonFracFilename );
 
-if(doEmissCalc)
+if(do_emiss_calc)
 {
 	// Calculate phi for each ion as a function of temperature and density
 	CalculatePhi();
@@ -388,15 +391,24 @@ void CElement::FreeAll( void )
 {
 int i;
 
-free( pSpecNum );
+if(do_emiss_calc)
+{
+	free( pSpecNum );
+}
 free( pTemp );
 free( pDen );
-free( pTotalPhi );
-
-for( i=0; i<NumIons; i++)
+if(do_emiss_calc)
 {
-    free( ppEmiss[i] );
-    free( ppPhi[i] );
+	free( pTotalPhi );
+}
+
+if(do_emiss_calc)
+{
+	for( i=0; i<NumIons; i++)
+	{
+	    free( ppEmiss[i] );
+	    free( ppPhi[i] );
+	}
 }
 
 for( i=0; i<Z; i++ )
@@ -408,11 +420,17 @@ for( i=0; i<Z; i++ )
 for( i=0; i<=Z; i++ )
     free( ppIonFrac[i] );
 
-free( ppEmiss );
+if(do_emiss_calc)
+{
+	free( ppEmiss );
+}
 free( ppIonRate );
 free( ppRecRate );
 free( ppIonFrac );
-free( ppPhi );
+if(do_emiss_calc)
+{
+	free( ppPhi );
+}
 }
 
 double CElement::GetIonEmissivity( int iIon, double flog_10T, double flog_10n )

@@ -24,6 +24,9 @@ class CRadiation {
 	// Config variables--originally set in config.h
 	double max_optically_thin_density; //log10 of maximum optically thin density value
 	
+	// Parameter for skipping emissivity calculation
+	bool do_emiss_calc;
+	
     // Pointer to an array of pointers of type PELEMENT
     PPELEMENT ppElements;
 	
