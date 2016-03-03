@@ -16,8 +16,8 @@
 #include <math.h>
 
 #include "OpticallyThickIon.h"
-#include "../../../Resources/source/file.h"
-#include "../../../Resources/source/fitpoly.h"
+#include "../../../rsp_toolkit/source/file.h"
+#include "../../../rsp_toolkit/source/fitpoly.h"
 
 COpticallyThickIon::COpticallyThickIon( int iZ, char *szIon, char *atomicDBFilename )
 {
