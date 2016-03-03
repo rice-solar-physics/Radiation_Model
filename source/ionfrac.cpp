@@ -14,7 +14,6 @@
 #include <string.h>
 
 #include "ionfrac.h"
-#include "config.h"
 #include "../../rsp_toolkit/source/file.h"
 #include "../../rsp_toolkit/source/fitpoly.h"
 #include "../../rsp_toolkit/source/xmlreader.h"
