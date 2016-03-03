@@ -38,18 +38,18 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	int i = 0;
 	
 	//Parse XML configuration file
-	TiXmlDocument doc(szFilename);
+	tinyxml2::XMLDocument doc;
 	
 	//Check if loaded
-	bool loadOK = doc.LoadFile();
-	if(!loadOK)
+	tinyxml2::XMLError loadOK = doc.LoadFile(szFilename);
+	if(loadOK != 0)
 	{
 		printf("Failed to load XML configuration file %s.\n",szFilename);
 		//TODO: Exit or break out from here
 	}
 	
 	//Get document root
-	TiXmlElement *root = doc.FirstChildElement();
+	tinyxml2::XMLElement *root = doc.FirstChildElement();
 	
 	//Retrieve configuration elements
 	sprintf(szAtomicDBFilename,"%s",check_element(recursive_read(root,"atomicDB"),"atomicDB")->GetText());
@@ -69,8 +69,8 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	pZ = (int*)malloc( sizeof(int) * NumElements ); // Allocate sufficient memory to hold the list of atomic numbers
 	
 	//Loop over elements
-	TiXmlElement *elementList = check_element(recursive_read(root,"elements"),"elements");
-	for(TiXmlElement *child = elementList->FirstChildElement(); child != NULL; child=child->NextSiblingElement())
+	tinyxml2::XMLElement *elementList = check_element(recursive_read(root,"elements"),"elements");
+	for(tinyxml2::XMLElement *child = elementList->FirstChildElement(); child != NULL; child=child->NextSiblingElement())
 	{
 		//Check counter
 		if(i>=NumElements)

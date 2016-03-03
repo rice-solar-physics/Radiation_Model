@@ -55,7 +55,7 @@ if(doEmissCalc)
 }
 }
 
-void CElement::SetConfigVars(TiXmlElement *root)
+void CElement::SetConfigVars(tinyxml2::XMLElement *root)
 {
 	//Set all config variables needed in the CElement class
 	density_dependent_rates = string2bool(check_element(recursive_read(root,"density_dependent_rates"),"density_dependent_rates")->GetText());

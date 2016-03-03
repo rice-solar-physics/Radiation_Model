@@ -42,18 +42,18 @@ if( !pIonFrac )
 {
     
 	//Parse XML configuration file
-	TiXmlDocument doc(szFilename);
+	tinyxml2::XMLDocument doc;
 	
 	//Check if loaded
-	bool loadOK = doc.LoadFile();
-	if(!loadOK)
+	tinyxml2::XMLError loadOK = doc.LoadFile(szFilename);
+	if(loadOK != 0)
 	{
 		printf("Failed to load XML configuration file %s.\n",szFilename);
 		//TODO: Exit or break out from here
 	}
 	
 	//Get document root
-	TiXmlElement *root = doc.FirstChildElement();
+	tinyxml2::Element *root = doc.FirstChildElement();
 	
 	//Read in parameters
 	cutoff_ion_fraction = atof(check_element(recursive_read(root,"cutoff_ion_fraction"),"cutoff_ion_fraction")->GetText());
@@ -70,8 +70,8 @@ if( !pIonFrac )
 	
 	//Loop over elements
 	i = 0;
-	TiXmlElement *elementList = check_element(recursive_read(root,"elements"),"elements");
-	for(TiXmlElement *child = elementList->FirstChildElement(); child != NULL; child=child->NextSiblingElement())
+	tinyxml2::XMLElement *elementList = check_element(recursive_read(root,"elements"),"elements");
+	for(tinyxml2::XMLElement *child = elementList->FirstChildElement(); child != NULL; child=child->NextSiblingElement())
 	{
 		//Check counter
 		if(i>=NumElements)

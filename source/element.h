@@ -11,7 +11,7 @@
 #ifndef ELEMENT_H
 #define ELEMENT_H
 
-#include "tinyxml.h"
+#include "../../rsp_toolkit/source/xmlreader.h"
 
 #define LONG_TIME_SCALE 1e300
 
@@ -90,7 +90,7 @@ class CElement {
     void Initialise( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc );
 	
 	// Function to set configuration variables
-	void SetConfigVars(TiXmlElement * root);
+	void SetConfigVars(tinyxml2::XMLElement * root);
 
     // Function to return the element abundance
     double GetAbundance( void );
