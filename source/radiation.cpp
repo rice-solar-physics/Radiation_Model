@@ -20,9 +20,9 @@
 #include "../../rsp_toolkit/source/xmlreader.h"
 
 
-CRadiation::CRadiation( char *szFilename )
+CRadiation::CRadiation( char *szFilename, bool doEmissCalc )
 {
-	Initialise(szFilename);
+	Initialise(szFilename, doEmissCalc );
 }
 
 CRadiation::~CRadiation( void )
@@ -30,7 +30,7 @@ CRadiation::~CRadiation( void )
 FreeAll();
 }
 
-void CRadiation::Initialise(char *szFilename)
+void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 {
 	//Declarations
 	char szAtomicDBFilename[256], szRangesFilename[256], szAbundFilename[256], szEmissFilename[256], szRatesFilename[256], szIonFracFilename[256];
@@ -87,7 +87,7 @@ void CRadiation::Initialise(char *szFilename)
 	    sprintf( szRatesFilename,"%s%s.rts",tempRates,tempSymb);
 	    sprintf( szIonFracFilename,"%s%s.bal",tempBalances,tempSymb);
 	    // Instantiate each element object
-	    ppElements[i] = new CElement( pZ[i], szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename );
+	    ppElements[i] = new CElement( pZ[i], szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename doEmissCalc );
 		// Set initial configuration elements from file
 		ppElements[i]->SetConfigVars(root);
 		//Increment counter
@@ -101,7 +101,10 @@ void CRadiation::Initialise(char *szFilename)
 	OpenRangesFile( szRangesFilename );
 	
 	// Calculate the total phi of all radiating elements as a function of temperature and density
-	CalculateTotalPhi();
+	if(doEmissCalc)
+	{
+		CalculateTotalPhi();
+	}
 }
 
 void CRadiation::OpenRangesFile( char *szRangesFilename )

@@ -81,13 +81,13 @@ class CElement {
     public:
 	
     // Constructor
-    CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename );
+    CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc );
 	
     // Destructor
     ~CElement( void );
 
     // Function to initialise the element object
-    void Initialise( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename );
+    void Initialise( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc );
 	
 	// Function to set configuration variables
 	void SetConfigVars(TiXmlElement * root);

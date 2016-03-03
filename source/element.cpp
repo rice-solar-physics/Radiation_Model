@@ -21,9 +21,9 @@
 #include "../../rsp_toolkit/source/xmlreader.h"
 
 
-CElement::CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename )
+CElement::CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc )
 {
-Initialise( iZ, szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename );
+Initialise( iZ, szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename, doEmissCalc );
 }
 
 CElement::~CElement( void )
@@ -31,7 +31,7 @@ CElement::~CElement( void )
 FreeAll();
 }
 
-void CElement::Initialise( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename )
+void CElement::Initialise( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc )
 {
 // Set the atomic number of the element
 Z = iZ;
@@ -39,15 +39,20 @@ Z = iZ;
 // Open the data files and initialise the element
 OpenRangesFile( szRangesFilename );
 OpenAbundanceFile( szAbundFilename );
-OpenEmissivityFile( szEmissFilename );
+if(doEmissCalc)
+{
+	OpenEmissivityFile( szEmissFilename );
+}
 OpenRatesFile( szRatesFilename );
 OpenIonFracFile( szIonFracFilename );
 
-// Calculate phi for each ion as a function of temperature and density
-CalculatePhi();
-
-// Calculate the total phi of all radiating elements as a function of temperature and density
-CalculateTotalPhi();
+if(doEmissCalc)
+{
+	// Calculate phi for each ion as a function of temperature and density
+	CalculatePhi();
+	// Calculate the total phi of all radiating elements as a function of temperature and density
+	CalculateTotalPhi();
+}
 }
 
 void CElement::SetConfigVars(TiXmlElement *root)

@@ -40,7 +40,7 @@ class CRadiation {
     double *pTotalPhi;
 
     // Function to initialise the radiation object with a set of elements
-    void Initialise( char *szFilename );
+    void Initialise( char *szFilename, bool doEmissCalc );
 
     // Function to open and read the ranges data file
     void OpenRangesFile( char *szRangesFilename );
@@ -54,7 +54,7 @@ class CRadiation {
     public:
 
     // Constructor
-    CRadiation( char *szFilename );
+    CRadiation( char *szFilename, bool doEmissCalc );
 	
     // Destructor
     ~CRadiation( void );
