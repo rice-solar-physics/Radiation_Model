@@ -87,7 +87,7 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	    sprintf( szRatesFilename,"%s%s.rts",tempRates,tempSymb);
 	    sprintf( szIonFracFilename,"%s%s.bal",tempBalances,tempSymb);
 	    // Instantiate each element object
-	    ppElements[i] = new CElement( pZ[i], szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename doEmissCalc );
+	    ppElements[i] = new CElement( pZ[i], szRangesFilename, szAbundFilename, szEmissFilename, szRatesFilename, szIonFracFilename, doEmissCalc );
 		// Set initial configuration elements from file
 		ppElements[i]->SetConfigVars(root);
 		//Increment counter
