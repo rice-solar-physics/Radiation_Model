@@ -68,10 +68,6 @@ void CElement::SetConfigVars(tinyxml2::XMLElement *root)
 	epsilon_d = atof(check_element(recursive_read(root,"epsilon_d"),"epsilon_d")->GetText());
 	epsilon_r = atof(check_element(recursive_read(root,"epsilon_r"),"epsilon_r")->GetText());
 	max_optically_thin_density = atof(check_element(recursive_read(root,"max_optically_thin_density"),"max_optically_thin_density")->GetText());
-	
-	//DEBUG
-	printf("cutoff_ion_fraction = %g\n",cutoff_ion_fraction);
-	printf("safety_atomic = %g\n",safety_atomic);
 }
 
 void CElement::OpenRangesFile( char *szRangesFilename )
