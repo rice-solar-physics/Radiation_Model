@@ -519,7 +519,7 @@ void CRadiation::GetAlldnibydt( double flog_10T, double flog_10n, double **ppni,
 double TimeScale, SmallestTimeScale;
 int i;
 
-SmallestTimeScale = LONG_TIME_SCALE;
+SmallestTimeScale = LARGEST_DOUBLE;
 
 for( i=0; i<NumElements; i++ )
 {

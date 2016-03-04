@@ -1272,7 +1272,7 @@ int iIndex, iSpecNum;
 ne = pow( 10.0, flog_10n );
 
 // Initialise the characteristic time-scales
-TimeScale = SmallestTimeScale = LONG_TIME_SCALE;
+TimeScale = SmallestTimeScale = LARGEST_DOUBLE;
 
 if( flog_10n >= max_optically_thin_density )
 	for( iIndex=0; iIndex<=Z; iIndex++ )
@@ -1329,7 +1329,7 @@ for( iIndex=0; iIndex<=Z; iIndex++ )
 		TimeScale = min( delta_t1, delta_t2 );
 	}
 	else
-		TimeScale = LONG_TIME_SCALE;
+		TimeScale = LARGEST_DOUBLE;
 
 	if( TimeScale < SmallestTimeScale )
 		SmallestTimeScale = TimeScale;

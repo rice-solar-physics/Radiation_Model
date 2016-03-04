@@ -13,8 +13,6 @@
 
 #include "../../rsp_toolkit/source/xmlreader.h"
 
-#define LONG_TIME_SCALE 1e300
-
 class CElement {
 
     private:
