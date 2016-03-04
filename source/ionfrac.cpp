@@ -268,7 +268,7 @@ for( i=0; i<NumElements; i++ )
     {
         ppIonFrac[i][j] += ppdnibydt[i][j] * delta_t;
 
-	// Ensure the minimum ion fraction remains above the cut-off and is physically realistic
+		// Ensure the minimum ion fraction remains above the cut-off and is physically realistic
         if( ppIonFrac[i][j] < cutoff_ion_fraction )
             ppIonFrac[i][j] = 0.0;
 
