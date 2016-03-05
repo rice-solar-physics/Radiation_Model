@@ -1284,7 +1284,6 @@ if( flog_10n >= max_optically_thin_density )
 }
 else
 {
-
 	for( iIndex=0; iIndex<=Z; iIndex++ )
 	{
 		// Reset the rates
