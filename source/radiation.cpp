@@ -525,8 +525,7 @@ for( i=0; i<NumElements; i++ )
 {
     
 	//DEBUG
-	printf("Element: %d, logT=%g, logn=%g\n",i,flog_10T,flog_10n);
-	printf("ppni[%d]=%g, ppdnibydt[%d]=%g\n",i,ppni[i],i,ppdnibydt[i]);
+	printf("Element: %d\n",i);
 	
 	ppElements[i]->Getdnibydt( flog_10T, flog_10n, ppni[i], ppdnibydt[i], &TimeScale );
 	
