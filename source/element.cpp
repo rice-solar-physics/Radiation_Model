@@ -1300,9 +1300,6 @@ else
 		else
 	        term2 = 0.0;
 		
-		//DEBUG
-		printf("term2 = %g\n",term2);
-		
 		if( iSpecNum < Z+1 )
 		{
 	        GetRates( iSpecNum, flog_10T, &IonRate[1], &RecRate[1] );
@@ -1311,18 +1308,9 @@ else
 		else
 	        term3 = 0.0;
 		
-		//DEBUG
-		printf("term3 = %g\n",term3);
-		
 		term4 = - pni[iIndex] * ( IonRate[1] + RecRate[0] );
-		
-		//DEBUG
-		printf("term4=%g\n",term4);
 
 		term5 = ne * ( term2 + term3 + term4 );
-		
-		//DEBUG
-		printf("term5=%g\n",term5);
 
 		pdnibydt[iIndex] = term5;
 

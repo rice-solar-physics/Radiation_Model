@@ -523,20 +523,11 @@ SmallestTimeScale = LARGEST_DOUBLE;
 
 for( i=0; i<NumElements; i++ )
 {
-    
-	//DEBUG
-	printf("Element: %d\n",i);
 	
 	ppElements[i]->Getdnibydt( flog_10T, flog_10n, ppni[i], ppdnibydt[i], &TimeScale );
-	
-	//DEBUG
-	printf("TimeScale=%g\n",TimeScale);
 
 	if( TimeScale < SmallestTimeScale )
 		SmallestTimeScale = TimeScale;
-	
-	//DEBUG
-	printf("SmallestTimeScale = %g\n",SmallestTimeScale);
 }
 
 *pTimeScale = SmallestTimeScale;
