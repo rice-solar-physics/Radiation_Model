@@ -1313,6 +1313,10 @@ else
 		term5 = ne * ( term2 + term3 + term4 );
 
 		pdnibydt[iIndex] = term5;
+		
+		//DEBUG
+		printf("Z=%d, i=%d\n",Z,iIndex);
+		printf("t1=%g, t3=%g, t4=%g, t5=%g\n",term2,term3,term4,term5);
 
 		if( term5 && pni[iIndex] > cutoff_ion_fraction )
 		{
