@@ -1317,6 +1317,8 @@ else
 		//DEBUG
 		printf("Z=%d, i=%d\n",Z,iIndex);
 		printf("t1=%g, t3=%g, t4=%g, t5=%g\n",term2,term3,term4,term5);
+		printf("pni[%d]=%g, pni[%d]=%g\n",iIndex,pni[iIndex],iIndex+1,pni[iIndex+1]);
+		printf("IR[0]=%g,IR[1]=%g,RR[0]=%g,RR[1]=%g\n",IonRate[0],IonRate[1],RecRate[0],RecRate[1]);
 
 		if( term5 && pni[iIndex] > cutoff_ion_fraction )
 		{
