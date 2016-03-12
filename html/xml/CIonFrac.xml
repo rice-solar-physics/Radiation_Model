@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='utf-8'?>
+<class id="CIonFrac" name="CIonFrac" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Ionization fraction class</brief>
+  <doc>Class for handling ionization fraction information. Methods include writing, reading,
+and setting ionization fractions for all ions of a given element. The rates of change for
+the ionization fractions from the time-dependent ionization equations are also handled here.
+</doc>
+  <field id="CIonFrac::NumElements" name="NumElements">
+    <brief>The number of elements for which ion fractional populations are available</brief>
+    <type builtin="yes" name="int" />
+  </field>
+  <field id="CIonFrac::pZ" name="pZ">
+    <brief>Pointer to an array containing each element's atomic number.  The offset</brief>
+    <doc>of the atomic number corresponds to the offset of the ionisation fraction
+object in the ppIonFrac array</doc>
+    <type builtin="yes" name="int" qualifier="*" />
+  </field>
+  <constructor id="CIonFrac::CIonFrac" name="CIonFrac">
+    <brief>Constructor</brief>
+    <argument id="CIonFrac::CIonFrac::pIonFrac" name="pIonFrac">
+      <type name="CIonFrac" qualifier="*" ref="CIonFrac#CIonFrac" />
+    </argument>
+    <argument id="CIonFrac::CIonFrac::szFilename" name="szFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CIonFrac::CIonFrac::pRadiationObj" name="pRadiationObj">
+      <type name="PRADIATION" ref="index#PRADIATION" />
+    </argument>
+  </constructor>
+  <destructor id="CIonFrac::~CIonFrac" name="~CIonFrac">
+    <brief>Destructor</brief>
+  </destructor>
+  <method id="CIonFrac::CopyAlldnibydt" name="CopyAlldnibydt">
+    <brief>Functions to overwrite dnibydt's in the current object</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::CopyAlldnibydt::pIonFrac" name="pIonFrac">
+      <type name="CIonFrac" qualifier="*" ref="CIonFrac#CIonFrac" />
+    </argument>
+  </method>
+  <method id="CIonFrac::CopyAllIonFrac" name="CopyAllIonFrac">
+    <brief>Functions to overwrite fractional populations in the current object</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::CopyAllIonFrac::pIonFrac" name="pIonFrac">
+      <type name="CIonFrac" qualifier="*" ref="CIonFrac#CIonFrac" />
+    </argument>
+  </method>
+  <method id="CIonFrac::Copydnibydt" name="Copydnibydt">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::Copydnibydt::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::Copydnibydt::pIonFrac" name="pIonFrac">
+      <type name="CIonFrac" qualifier="*" ref="CIonFrac#CIonFrac" />
+    </argument>
+  </method>
+  <method id="CIonFrac::CopyIonFrac" name="CopyIonFrac">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::CopyIonFrac::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::CopyIonFrac::pIonFrac" name="pIonFrac">
+      <type name="CIonFrac" qualifier="*" ref="CIonFrac#CIonFrac" />
+    </argument>
+  </method>
+  <method id="CIonFrac::IntegrateAllIonFrac" name="IntegrateAllIonFrac">
+    <brief>Functions to integrate the fractional populations of the ions</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::IntegrateAllIonFrac::delta_t" name="delta_t">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::IntegrateIonFrac" name="IntegrateIonFrac">
+    <brief>Integrate single ion fractions</brief>
+    <doc>* @iZ atomic number of element
+</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::IntegrateIonFrac::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::IntegrateIonFrac::delta_t" name="delta_t">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::InterpolateAllIonFrac" name="InterpolateAllIonFrac">
+    <brief>Functions to interpolate the fractional populations in the current object from</brief>
+    <doc>the adjacent fractional populations</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::InterpolateAllIonFrac::x" name="x">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CIonFrac::InterpolateAllIonFrac::pppIonFrac" name="pppIonFrac">
+      <type builtin="yes" name="double" qualifier="***" />
+    </argument>
+    <argument id="CIonFrac::InterpolateAllIonFrac::iPoints" name="iPoints">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::InterpolateAllIonFrac::s" name="s">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::InterpolateIonFrac" name="InterpolateIonFrac">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::InterpolateIonFrac::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::InterpolateIonFrac::x" name="x">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CIonFrac::InterpolateIonFrac::pppIonFrac" name="pppIonFrac">
+      <type builtin="yes" name="double" qualifier="***" />
+    </argument>
+    <argument id="CIonFrac::InterpolateIonFrac::iPoints" name="iPoints">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::InterpolateIonFrac::s" name="s">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::pGetdnibydt" name="pGetdnibydt">
+    <return>
+      <type builtin="yes" name="double" qualifier="*" />
+    </return>
+    <argument id="CIonFrac::pGetdnibydt::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+  </method>
+  <method id="CIonFrac::pGetElementInfo" name="pGetElementInfo">
+    <brief>Function to return the number of elements for which ion fractional population</brief>
+    <doc>data is stored and the atomic numbers of the elements</doc>
+    <return>
+      <type builtin="yes" name="int" qualifier="*" />
+    </return>
+    <argument id="CIonFrac::pGetElementInfo::pNumElements" name="pNumElements">
+      <type builtin="yes" name="int" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CIonFrac::pGetIonFrac" name="pGetIonFrac">
+    <return>
+      <type builtin="yes" name="double" qualifier="*" />
+    </return>
+    <argument id="CIonFrac::pGetIonFrac::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+  </method>
+  <method id="CIonFrac::ppGetdnibydt" name="ppGetdnibydt">
+    <brief>Functions to return a pointer to the rate of change with respect to time</brief>
+    <doc>of the fractional populations of the ions at the current temperature</doc>
+    <return>
+      <type builtin="yes" name="double" qualifier="**" />
+    </return>
+  </method>
+  <method id="CIonFrac::ppGetIonFrac" name="ppGetIonFrac">
+    <brief>Functions to return a pointer to the fractional populations of the ions</brief>
+    <doc>at the current temperature</doc>
+    <return>
+      <type builtin="yes" name="double" qualifier="**" />
+    </return>
+  </method>
+  <method id="CIonFrac::ReadAllIonFracFromFile" name="ReadAllIonFracFromFile">
+    <brief>Functions to read either all of the ion fractional populations or a particular set of</brief>
+    <doc>fractional populations from a data file</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::ReadAllIonFracFromFile::pFile" name="pFile">
+      <type builtin="yes" name="void" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CIonFrac::ReadIonFracFromFile" name="ReadIonFracFromFile">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::ReadIonFracFromFile::pFile" name="pFile">
+      <type builtin="yes" name="void" qualifier="*" />
+    </argument>
+    <argument id="CIonFrac::ReadIonFracFromFile::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+  </method>
+  <method id="CIonFrac::ResetAllIonFrac" name="ResetAllIonFrac">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::ResetAllIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::ResetAllIonFrac" name="ResetAllIonFrac">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::ResetAllIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CIonFrac::ResetAllIonFrac::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::ResetIonFrac" name="ResetIonFrac">
+    <brief>Functions to reset the fractional populations to their equilibrium values at the</brief>
+    <doc>specified temperature and density</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::ResetIonFrac::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::ResetIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::ResetIonFrac" name="ResetIonFrac">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::ResetIonFrac::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CIonFrac::ResetIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CIonFrac::ResetIonFrac::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CIonFrac::WriteAllIonFracToFile" name="WriteAllIonFracToFile">
+    <brief>Functions to write either all of the ion fractional populations or a particular set of</brief>
+    <doc>fractional populations to a data file</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::WriteAllIonFracToFile::pFile" name="pFile">
+      <type builtin="yes" name="void" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CIonFrac::WriteIonFracToFile" name="WriteIonFracToFile">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CIonFrac::WriteIonFracToFile::pFile" name="pFile">
+      <type builtin="yes" name="void" qualifier="*" />
+    </argument>
+    <argument id="CIonFrac::WriteIonFracToFile::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+  </method>
+</class>

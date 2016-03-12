@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<index xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <class name="CElement" ref="CElement#CElement" />
+  <class name="CIonFrac" ref="CIonFrac#CIonFrac">
+    <brief>Ionization fraction class</brief>
+  </class>
+  <class name="COpticallyThickIon" ref="COpticallyThickIon#COpticallyThickIon">
+    <brief>[K]</brief>
+  </class>
+  <class name="CRadiation" ref="CRadiation#CRadiation" />
+  <typedef id="PELEMENT" name="PELEMENT">
+    <type name="CElement" ref="CElement#CElement" />
+  </typedef>
+  <typedef id="PIONFRAC" name="PIONFRAC">
+    <type name="CIonFrac" ref="CIonFrac#CIonFrac" />
+  </typedef>
+  <typedef id="POPTICALLYTHICKION" name="POPTICALLYTHICKION">
+    <type name="COpticallyThickIon" ref="COpticallyThickIon#COpticallyThickIon" />
+  </typedef>
+  <typedef id="PPELEMENT" name="PPELEMENT">
+    <type name="CElement" ref="CElement#CElement" />
+  </typedef>
+  <typedef id="PPOPTICALLYTHICKION" name="PPOPTICALLYTHICKION">
+    <type name="COpticallyThickIon" ref="COpticallyThickIon#COpticallyThickIon" />
+  </typedef>
+  <typedef id="PRADIATION" name="PRADIATION">
+    <type name="CRadiation" ref="CRadiation#CRadiation" />
+  </typedef>
+  <report name="Documentation generator" ref="report" />
+</index>

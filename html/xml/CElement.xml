@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='utf-8'?>
+<class id="CElement" name="CElement" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <constructor id="CElement::CElement" name="CElement">
+    <brief>Constructor</brief>
+    <argument id="CElement::CElement::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::CElement::szRangesFilename" name="szRangesFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::CElement::szAbundFilename" name="szAbundFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::CElement::szEmissFilename" name="szEmissFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::CElement::szRatesFilename" name="szRatesFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::CElement::szIonFracFilename" name="szIonFracFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::CElement::doEmissCalc" name="doEmissCalc">
+      <type builtin="yes" name="bool" />
+    </argument>
+  </constructor>
+  <destructor id="CElement::~CElement" name="~CElement">
+    <brief>Destructor</brief>
+  </destructor>
+  <method id="CElement::GetAbundance" name="GetAbundance">
+    <brief>Function to return the element abundance</brief>
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+  </method>
+  <method id="CElement::Getdnibydt" name="Getdnibydt">
+    <brief>Function to calculate the rate of change with respect to time of the fractional population of the ions and the characteristic time-scale</brief>
+    <doc>Overload for use with IonPopSolver code</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CElement::Getdnibydt::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::Getdnibydt::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pni0" name="pni0">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pni1" name="pni1">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pni2" name="pni2">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pni3" name="pni3">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pni4" name="pni4">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::s" name="s">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::s_pos" name="s_pos">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pv" name="pv">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::delta_s" name="delta_s">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pdnibydt" name="pdnibydt">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pTimeScale" name="pTimeScale">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CElement::Getdnibydt" name="Getdnibydt">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CElement::Getdnibydt::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::Getdnibydt::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pni" name="pni">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pdnibydt" name="pdnibydt">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::Getdnibydt::pTimeScale" name="pTimeScale">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CElement::GetEmissivity" name="GetEmissivity">
+    <brief>Functions to calculate the emissivity in equilibrium (this number includes multiplication by the ion fraction)</brief>
+    <doc>Multiply by the number density squared to obtain the energy radiatied in units of erg cm^-3 s^-1</doc>
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="CElement::GetEmissivity::iIon" name="iIon">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::GetEmissivity::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEmissivity::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CElement::GetEmissivity" name="GetEmissivity">
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="CElement::GetEmissivity::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEmissivity::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CElement::GetEmissivity" name="GetEmissivity">
+    <brief>Functions to calculate the emissivity away from equilibrium (this number includes multiplication by the ion fraction)</brief>
+    <doc>Multiply by the number density squared to obtain the energy radiatied in units of erg cm^-3 s^-1</doc>
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="CElement::GetEmissivity::iIon" name="iIon">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::GetEmissivity::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEmissivity::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEmissivity::ni" name="ni">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CElement::GetEmissivity" name="GetEmissivity">
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="CElement::GetEmissivity::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEmissivity::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEmissivity::pni" name="pni">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CElement::GetEquilIonFrac" name="GetEquilIonFrac">
+    <brief>Function to return the fractional population of a particular ion at a</brief>
+    <doc>specified temperature and density in equilibrium</doc>
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="CElement::GetEquilIonFrac::iIon" name="iIon">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::GetEquilIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CElement::GetEquilIonFrac" name="GetEquilIonFrac">
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="CElement::GetEquilIonFrac::iIon" name="iIon">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::GetEquilIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetEquilIonFrac::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="CElement::GetRates" name="GetRates">
+    <brief>Function to return the total ionisation and total recombination rate</brief>
+    <doc>for a particular ion at a specified temperature and density</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CElement::GetRates::iIon" name="iIon">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::GetRates::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetRates::pfIonRate" name="pfIonRate">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::GetRates::pfRecRate" name="pfRecRate">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CElement::GetRates" name="GetRates">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CElement::GetRates::iIon" name="iIon">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::GetRates::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetRates::flog_10n" name="flog_10n">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="CElement::GetRates::pfIonRate" name="pfIonRate">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+    <argument id="CElement::GetRates::pfRecRate" name="pfRecRate">
+      <type builtin="yes" name="double" qualifier="*" />
+    </argument>
+  </method>
+  <method id="CElement::Initialise" name="Initialise">
+    <brief>Function to initialise the element object</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CElement::Initialise::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="CElement::Initialise::szRangesFilename" name="szRangesFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::Initialise::szAbundFilename" name="szAbundFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::Initialise::szEmissFilename" name="szEmissFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::Initialise::szRatesFilename" name="szRatesFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::Initialise::szIonFracFilename" name="szIonFracFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="CElement::Initialise::doEmissCalc" name="doEmissCalc">
+      <type builtin="yes" name="bool" />
+    </argument>
+  </method>
+  <method id="CElement::SetConfigVars" name="SetConfigVars">
+    <brief>Function to set configuration variables</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="CElement::SetConfigVars::root" name="root">
+      <type name="tinyxml2::XMLElement" qualifier="*" />
+    </argument>
+  </method>
+</class>

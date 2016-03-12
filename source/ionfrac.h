@@ -10,7 +10,12 @@
 
 #include "radiation.h"
 
-
+/*Ionization fraction class
+ *
+ * Class for handling ionization fraction information. Methods include writing, reading, 
+ * and setting ionization fractions for all ions of a given element. The rates of change for
+ * the ionization fractions from the time-dependent ionization equations are also handled here.
+ */
 class CIonFrac {
 
     private:
@@ -74,6 +79,14 @@ class CIonFrac {
 
     // Functions to integrate the fractional populations of the ions
     void IntegrateAllIonFrac( double delta_t );
+	/* Integrate single ion fractions
+ 	 * @iZ atomic number of element
+	 * @delta_t current time step
+	 *
+	 * IntegrateIonFrac finds the given element, integrates the dnibydt term at 
+	 * the current timestep, and sums over all ions of the element. The sum of the
+	 * ion fractions are then normalized to one.
+ 	 */
     void IntegrateIonFrac( int iZ, double delta_t );
 
     // Function to return the number of elements for which ion fractional population
