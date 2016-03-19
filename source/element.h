@@ -82,7 +82,7 @@ class CElement {
     public:
 	
     // Constructor
-    CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc );
+    CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc, tinyxml2::XMLElement * root );
 	
     // Destructor
     ~CElement( void );
