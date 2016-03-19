@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CIonFrac</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="styles/cldoc.css">
+</head>
+
+<body id="cldoc">
+    <div id="cldoc_sidebar">
+        <div id="cldoc_sidebar_items">
+            <div class="back">
+                <div class="name"><span><span class="keyword">Class</span><span>CIonFrac</span></span>
+                </div><a href="index.html"><span class="arrow">↵</span> <span>Index</span></a></div>
+            <div id="cldoc_sidebar_pagenav"></div>
+            <div class="subtitle">Fields</div>
+            <ul>
+                <li><a href="#CIonFrac.NumElements">NumElements<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Number of elements for which ion fractional populations are available</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.pZ">pZ<span class="counter"></span></a>
+                    <div class="brief">
+                        <p> Pointer to array of atomic numbers</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="subtitle">Constructors</div>
+            <ul>
+                <li><a href="#CIonFrac.CIonFrac">CIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Default constructor</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="subtitle">Destructors</div>
+            <ul>
+                <li><a href="#CIonFrac.~CIonFrac">~CIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Destructor</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="subtitle">Member Functions</div>
+            <ul>
+                <li><a href="#CIonFrac.CopyAlldnibydt">CopyAlldnibydt<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to overwrite dnibydt's in the current object</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.CopyAllIonFrac">CopyAllIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to overwrite fractional populations in the current object</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.Copydnibydt">Copydnibydt<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.CopyIonFrac">CopyIonFrac<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.IntegrateAllIonFrac">IntegrateAllIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to integrate the fractional populations of the ions</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.IntegrateIonFrac">IntegrateIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Integrate single ion fractions</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.InterpolateAllIonFrac">InterpolateAllIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to interpolate the fractional populations in the current object from</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.InterpolateIonFrac">InterpolateIonFrac<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.pGetdnibydt">pGetdnibydt<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.pGetElementInfo">pGetElementInfo<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Function to return the number of elements for which ion fractional population</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.pGetIonFrac">pGetIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Return pointer to fractional populations of iZ at current temperature</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.ppGetdnibydt">ppGetdnibydt<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to return a pointer to the rate of change with respect to time</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.ppGetIonFrac">ppGetIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Return double pointer to fractional populations of elements</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.ReadAllIonFracFromFile">ReadAllIonFracFromFile<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to read either all of the ion fractional populations or a particular set of</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.ReadIonFracFromFile">ReadIonFracFromFile<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.ResetAllIonFrac">ResetAllIonFrac<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.ResetAllIonFrac">ResetAllIonFrac<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.ResetIonFrac">ResetIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Functions to reset the fractional populations to their equilibrium values at the</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.ResetIonFrac">ResetIonFrac<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.WriteAllIonFracToFile">WriteAllIonFracToFile<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Write all ion fractions to file</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.WriteIonFracToFile">WriteIonFracToFile<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Write all</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="cldoc_content">
+        <h1 id="CIonFrac"><span><span class="keyword">Class</span><span>CIonFrac</span></span></h1>
+        <div class="description">
+            <div class="doc">
+                <p>Class for handling ionization fraction information. Methods include writing, reading, and setting ionization fractions for all ions of a given element. The rates of change for the ionization fractions from the time-dependent ionization
+                    equations are also handled here.</p>
+            </div>
+        </div>
+        <h2 data-cldoc-dynamic="1" id="fields">Fields</h2>
+        <table class="fields">
+            <tbody>
+                <tr id="CIonFrac::NumElements">
+                    <td class="field_name identifier">NumElements</td>
+                    <td class="field_type"><span class="type"><span class="name builtin">int</span></span>
+                    </td>
+                    <td class="doc">
+                        <div class="brief">
+                            <p>Number of elements for which ion fractional populations are available</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="CIonFrac::pZ">
+                    <td class="field_name identifier">pZ</td>
+                    <td class="field_type"><span class="type"><span class="name builtin">int</span><span class="qualifier"> *</span></span>
+                    </td>
+                    <td class="doc">
+                        <div class="doc">
+                            <ul>
+                                <li><pre><code>   * Pointer to an array containing each element's atomic number. The offset</code></pre> of the atomic number corresponds to the offset of the ionisation fraction object in the ppIonFrac array</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 data-cldoc-dynamic="1" id="constructors">Constructors</h2>
+        <div class="constructors">
+            <div class="function">
+                <div class="declaration" id="CIonFrac::CIonFrac">
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">CIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name "><a href="#CIonFrac">CIonFrac</a></span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pIonFrac,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">char</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">szFilename,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name "><a href="index.html#PRADIATION">PRADIATION</a></span></span>
+                                </td>
+                                <td class="argument_name">pRadiationObj</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Default constructor</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::CIonFrac::pIonFrac">
+                            <td>pIonFrac</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::CIonFrac::szFilename">
+                            <td>szFilename</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::CIonFrac::pRadiationObj">
+                            <td>pRadiationObj</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h2 data-cldoc-dynamic="1" id="destructors">Destructors</h2>
+        <div class="destructors">
+            <div class="function">
+                <div class="declaration" id="CIonFrac::~CIonFrac">
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">~CIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td colspan="2"></td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Destructor</p>
+                </div>
+                <table class="arguments"></table>
+            </div>
+        </div>
+        <h2 data-cldoc-dynamic="1" id="member functions">Member Functions</h2>
+        <div class="member_functions">
+            <div class="function">
+                <div class="declaration" id="CIonFrac::CopyAlldnibydt">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">CopyAlldnibydt</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name "><a href="#CIonFrac">CIonFrac</a></span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pIonFrac</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Functions to overwrite dnibydt's in the current object</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::CopyAlldnibydt::pIonFrac">
+                            <td>pIonFrac</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::CopyAllIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">CopyAllIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name "><a href="#CIonFrac">CIonFrac</a></span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pIonFrac</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Functions to overwrite fractional populations in the current object</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::CopyAllIonFrac::pIonFrac">
+                            <td>pIonFrac</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::Copydnibydt">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">Copydnibydt</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name "><a href="#CIonFrac">CIonFrac</a></span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pIonFrac</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::Copydnibydt::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::Copydnibydt::pIonFrac">
+                            <td>pIonFrac</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::CopyIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">CopyIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name "><a href="#CIonFrac">CIonFrac</a></span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pIonFrac</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::CopyIonFrac::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::CopyIonFrac::pIonFrac">
+                            <td>pIonFrac</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::IntegrateAllIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">IntegrateAllIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">delta_t</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Functions to integrate the fractional populations of the ions</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::IntegrateAllIonFrac::delta_t">
+                            <td>delta_t</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::IntegrateIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">IntegrateIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">delta_t</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="doc">
+                    <ul>
+                        <li>@iZ atomic number of element</li>
+                    </ul>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::IntegrateIonFrac::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::IntegrateIonFrac::delta_t">
+                            <td>delta_t</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::InterpolateAllIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">InterpolateAllIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">x,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> ***</span></span>
+                                </td>
+                                <td class="argument_name">pppIonFrac,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iPoints,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">s</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="doc">
+                    <p>the adjacent fractional populations</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::InterpolateAllIonFrac::x">
+                            <td>x</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateAllIonFrac::pppIonFrac">
+                            <td>pppIonFrac</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateAllIonFrac::iPoints">
+                            <td>iPoints</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateAllIonFrac::s">
+                            <td>s</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::InterpolateIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">InterpolateIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">x,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> ***</span></span>
+                                </td>
+                                <td class="argument_name">pppIonFrac,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iPoints,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">s</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::InterpolateIonFrac::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateIonFrac::x">
+                            <td>x</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateIonFrac::pppIonFrac">
+                            <td>pppIonFrac</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateIonFrac::iPoints">
+                            <td>iPoints</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::InterpolateIonFrac::s">
+                            <td>s</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::pGetdnibydt">
+                    <div class="return_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> *</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">pGetdnibydt</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::pGetdnibydt::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr class="return">
+                            <td class="keyword">return</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::pGetElementInfo">
+                    <div class="return_type"><span class="type"><span class="name builtin">int</span><span class="qualifier"> *</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">pGetElementInfo</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pNumElements</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="doc">
+                    <p>data is stored and the atomic numbers of the elements</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::pGetElementInfo::pNumElements">
+                            <td>pNumElements</td>
+                            <td></td>
+                        </tr>
+                        <tr class="return">
+                            <td class="keyword">return</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::pGetIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> *</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">pGetIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Return pointer to fractional populations of iZ at current temperature</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::pGetIonFrac::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr class="return">
+                            <td class="keyword">return</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ppGetdnibydt">
+                    <div class="return_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> **</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ppGetdnibydt</td>
+                                <td class="open_paren">(</td>
+                                <td colspan="2"></td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="doc">
+                    <p>of the fractional populations of the ions at the current temperature</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr class="return">
+                            <td class="keyword">return</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ppGetIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">double</span><span class="qualifier"> **</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ppGetIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td colspan="2"></td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Return double pointer to fractional populations of elements</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr class="return">
+                            <td class="keyword">return</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ReadAllIonFracFromFile">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ReadAllIonFracFromFile</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">void</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pFile</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="doc">
+                    <p>fractional populations from a data file</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::ReadAllIonFracFromFile::pFile">
+                            <td>pFile</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ReadIonFracFromFile">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ReadIonFracFromFile</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">void</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pFile,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::ReadIonFracFromFile::pFile">
+                            <td>pFile</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::ReadIonFracFromFile::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ResetAllIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ResetAllIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">flog_10T</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::ResetAllIonFrac::flog_10T">
+                            <td>flog_10T</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ResetAllIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ResetAllIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">flog_10T,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">flog_10n</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::ResetAllIonFrac::flog_10T">
+                            <td>flog_10T</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::ResetAllIonFrac::flog_10n">
+                            <td>flog_10n</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ResetIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ResetIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">flog_10T</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="doc">
+                    <p>specified temperature and density</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::ResetIonFrac::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::ResetIonFrac::flog_10T">
+                            <td>flog_10T</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::ResetIonFrac">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">ResetIonFrac</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">flog_10T,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">double</span></span>
+                                </td>
+                                <td class="argument_name">flog_10n</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::ResetIonFrac::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::ResetIonFrac::flog_10T">
+                            <td>flog_10T</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::ResetIonFrac::flog_10n">
+                            <td>flog_10n</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::WriteAllIonFracToFile">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">WriteAllIonFracToFile</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">void</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pFile</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Write all ion fractions to file</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::WriteAllIonFracToFile::pFile">
+                            <td>pFile</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="function">
+                <div class="declaration" id="CIonFrac::WriteIonFracToFile">
+                    <div class="return_type"><span class="type"><span class="name builtin">void</span></span>
+                    </div>
+                    <table class="declaration">
+                        <tbody>
+                            <tr>
+                                <td class="identifier">WriteIonFracToFile</td>
+                                <td class="open_paren">(</td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">void</span><span class="qualifier"> *</span></span>
+                                </td>
+                                <td class="argument_name">pFile,</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="argument_type"><span class="type"><span class="name builtin">int</span></span>
+                                </td>
+                                <td class="argument_name">iZ</td>
+                                <td class="close_paren">)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="brief">
+                    <p>Write all</p>
+                </div>
+                <table class="arguments">
+                    <tbody>
+                        <tr id="CIonFrac::WriteIonFracToFile::pFile">
+                            <td>pFile</td>
+                            <td></td>
+                        </tr>
+                        <tr id="CIonFrac::WriteIonFracToFile::iZ">
+                            <td>iZ</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<!-- vi:ts=2:et -->

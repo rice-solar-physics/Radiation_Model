@@ -6,17 +6,20 @@ and setting ionization fractions for all ions of a given element. The rates of c
 the ionization fractions from the time-dependent ionization equations are also handled here.
 </doc>
   <field id="CIonFrac::NumElements" name="NumElements">
-    <brief>The number of elements for which ion fractional populations are available</brief>
+    <brief>Number of elements for which ion fractional populations are available</brief>
     <type builtin="yes" name="int" />
   </field>
   <field id="CIonFrac::pZ" name="pZ">
-    <brief>Pointer to an array containing each element's atomic number.  The offset</brief>
-    <doc>of the atomic number corresponds to the offset of the ionisation fraction
-object in the ppIonFrac array</doc>
+    <brief> Pointer to array of atomic numbers</brief>
+    <doc>* 
+         * Pointer to an array containing each element's atomic number. The offset
+of the atomic number corresponds to the offset of the ionisation fraction
+object in the ppIonFrac array
+</doc>
     <type builtin="yes" name="int" qualifier="*" />
   </field>
   <constructor id="CIonFrac::CIonFrac" name="CIonFrac">
-    <brief>Constructor</brief>
+    <brief>Default constructor</brief>
     <argument id="CIonFrac::CIonFrac::pIonFrac" name="pIonFrac">
       <type name="CIonFrac" qualifier="*" ref="CIonFrac#CIonFrac" />
     </argument>
@@ -151,6 +154,7 @@ object in the ppIonFrac array</doc>
     </argument>
   </method>
   <method id="CIonFrac::pGetIonFrac" name="pGetIonFrac">
+    <brief>Return pointer to fractional populations of iZ at current temperature</brief>
     <return>
       <type builtin="yes" name="double" qualifier="*" />
     </return>
@@ -166,8 +170,7 @@ object in the ppIonFrac array</doc>
     </return>
   </method>
   <method id="CIonFrac::ppGetIonFrac" name="ppGetIonFrac">
-    <brief>Functions to return a pointer to the fractional populations of the ions</brief>
-    <doc>at the current temperature</doc>
+    <brief>Return double pointer to fractional populations of elements</brief>
     <return>
       <type builtin="yes" name="double" qualifier="**" />
     </return>
@@ -240,8 +243,7 @@ object in the ppIonFrac array</doc>
     </argument>
   </method>
   <method id="CIonFrac::WriteAllIonFracToFile" name="WriteAllIonFracToFile">
-    <brief>Functions to write either all of the ion fractional populations or a particular set of</brief>
-    <doc>fractional populations to a data file</doc>
+    <brief>Write all ion fractions to file</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -250,6 +252,7 @@ object in the ppIonFrac array</doc>
     </argument>
   </method>
   <method id="CIonFrac::WriteIonFracToFile" name="WriteIonFracToFile">
+    <brief>Write all</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>

@@ -25,7 +25,7 @@ return values.
         <location column="1" file="source/element.h" line="126" />
       </undocumented>
       <undocumented id="PIONFRAC" name="PIONFRAC">
-        <location column="1" file="source/ionfrac.h" line="118" />
+        <location column="1" file="source/ionfrac.h" line="128" />
       </undocumented>
       <undocumented id="POPTICALLYTHICKION" name="POPTICALLYTHICKION">
         <location column="1" file="source/OpticallyThick/OpticallyThickIon.h" line="79" />
@@ -43,65 +43,57 @@ return values.
     <type documented="4" name="destructor" undocumented="0" />
     <type documented="3" name="field" undocumented="0" />
     <type documented="4" name="constructor" undocumented="0" />
-    <type documented="30" name="method" undocumented="29">
+    <type documented="32" name="method" undocumented="27">
       <undocumented id="CElement::GetEmissivity" name="GetEmissivity">
         <location column="5" file="source/element.h" line="112" />
-        <location column="1" file="source/element.cpp" line="941" />
+        <location column="1" file="source/element.cpp" line="942" />
       </undocumented>
       <undocumented id="CElement::GetEmissivity" name="GetEmissivity">
         <location column="5" file="source/element.h" line="122" />
-        <location column="1" file="source/element.cpp" line="1349" />
+        <location column="1" file="source/element.cpp" line="1350" />
       </undocumented>
       <undocumented id="CElement::GetEquilIonFrac" name="GetEquilIonFrac">
         <location column="5" file="source/element.h" line="107" />
-        <location column="1" file="source/element.cpp" line="755" />
+        <location column="1" file="source/element.cpp" line="756" />
       </undocumented>
       <undocumented id="CElement::GetRates" name="GetRates">
         <location column="5" file="source/element.h" line="102" />
-        <location column="1" file="source/element.cpp" line="593" />
+        <location column="1" file="source/element.cpp" line="594" />
       </undocumented>
       <undocumented id="CElement::Getdnibydt" name="Getdnibydt">
         <location column="2" file="source/element.h" line="117" />
-        <location column="1" file="source/element.cpp" line="1266" />
+        <location column="1" file="source/element.cpp" line="1267" />
       </undocumented>
       <undocumented id="CIonFrac::CopyIonFrac" name="CopyIonFrac">
-        <location column="5" file="source/ionfrac.h" line="98" />
+        <location column="5" file="source/ionfrac.h" line="108" />
         <location column="1" file="source/ionfrac.cpp" line="328" />
       </undocumented>
       <undocumented id="CIonFrac::Copydnibydt" name="Copydnibydt">
-        <location column="5" file="source/ionfrac.h" line="102" />
+        <location column="5" file="source/ionfrac.h" line="112" />
         <location column="1" file="source/ionfrac.cpp" line="357" />
       </undocumented>
       <undocumented id="CIonFrac::InterpolateIonFrac" name="InterpolateIonFrac">
-        <location column="5" file="source/ionfrac.h" line="107" />
+        <location column="5" file="source/ionfrac.h" line="117" />
         <location column="1" file="source/ionfrac.cpp" line="407" />
       </undocumented>
       <undocumented id="CIonFrac::ReadIonFracFromFile" name="ReadIonFracFromFile">
-        <location column="5" file="source/ionfrac.h" line="73" />
+        <location column="5" file="source/ionfrac.h" line="82" />
         <location column="1" file="source/ionfrac.cpp" line="224" />
       </undocumented>
       <undocumented id="CIonFrac::ResetAllIonFrac" name="ResetAllIonFrac">
-        <location column="5" file="source/ionfrac.h" line="113" />
+        <location column="5" file="source/ionfrac.h" line="123" />
         <location column="1" file="source/ionfrac.cpp" line="468" />
       </undocumented>
       <undocumented id="CIonFrac::ResetAllIonFrac" name="ResetAllIonFrac">
-        <location column="5" file="source/ionfrac.h" line="114" />
+        <location column="5" file="source/ionfrac.h" line="124" />
         <location column="1" file="source/ionfrac.cpp" line="479" />
       </undocumented>
       <undocumented id="CIonFrac::ResetIonFrac" name="ResetIonFrac">
-        <location column="5" file="source/ionfrac.h" line="112" />
+        <location column="5" file="source/ionfrac.h" line="122" />
         <location column="1" file="source/ionfrac.cpp" line="454" />
       </undocumented>
-      <undocumented id="CIonFrac::WriteIonFracToFile" name="WriteIonFracToFile">
-        <location column="5" file="source/ionfrac.h" line="68" />
-        <location column="1" file="source/ionfrac.cpp" line="193" />
-      </undocumented>
-      <undocumented id="CIonFrac::pGetIonFrac" name="pGetIonFrac">
-        <location column="5" file="source/ionfrac.h" line="63" />
-        <location column="1" file="source/ionfrac.cpp" line="165" />
-      </undocumented>
       <undocumented id="CIonFrac::pGetdnibydt" name="pGetdnibydt">
-        <location column="5" file="source/ionfrac.h" line="78" />
+        <location column="5" file="source/ionfrac.h" line="87" />
         <location column="1" file="source/ionfrac.cpp" line="245" />
       </undocumented>
       <undocumented id="COpticallyThickIon::GetVolumetricLossRate" name="GetVolumetricLossRate">
@@ -114,51 +106,51 @@ return values.
       </undocumented>
       <undocumented id="CRadiation::GetAlldnibydt" name="GetAlldnibydt">
         <location column="5" file="source/radiation.h" line="96" />
-        <location column="1" file="source/radiation.cpp" line="499" />
+        <location column="1" file="source/radiation.cpp" line="497" />
       </undocumented>
       <undocumented id="CRadiation::GetAlldnibydt" name="GetAlldnibydt">
         <location column="2" file="source/radiation.h" line="97" />
-        <location column="1" file="source/radiation.cpp" line="517" />
+        <location column="1" file="source/radiation.cpp" line="515" />
       </undocumented>
       <undocumented id="CRadiation::GetEquilIonFrac" name="GetEquilIonFrac">
         <location column="5" file="source/radiation.h" line="74" />
-        <location column="1" file="source/radiation.cpp" line="238" />
+        <location column="1" file="source/radiation.cpp" line="236" />
       </undocumented>
       <undocumented id="CRadiation::GetFreeFreeRad" name="GetFreeFreeRad">
         <location column="5" file="source/radiation.h" line="106" />
-        <location column="1" file="source/radiation.cpp" line="651" />
+        <location column="1" file="source/radiation.cpp" line="649" />
       </undocumented>
       <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
         <location column="5" file="source/radiation.h" line="88" />
-        <location column="1" file="source/radiation.cpp" line="353" />
+        <location column="1" file="source/radiation.cpp" line="351" />
       </undocumented>
       <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
         <location column="5" file="source/radiation.h" line="89" />
-        <location column="1" file="source/radiation.cpp" line="375" />
+        <location column="1" file="source/radiation.cpp" line="373" />
       </undocumented>
       <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
         <location column="5" file="source/radiation.h" line="101" />
-        <location column="1" file="source/radiation.cpp" line="558" />
+        <location column="1" file="source/radiation.cpp" line="556" />
       </undocumented>
       <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
         <location column="5" file="source/radiation.h" line="102" />
-        <location column="1" file="source/radiation.cpp" line="580" />
+        <location column="1" file="source/radiation.cpp" line="578" />
       </undocumented>
       <undocumented id="CRadiation::Getdnibydt" name="Getdnibydt">
         <location column="2" file="source/radiation.h" line="95" />
-        <location column="1" file="source/radiation.cpp" line="486" />
+        <location column="1" file="source/radiation.cpp" line="484" />
       </undocumented>
       <undocumented id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
         <location column="5" file="source/radiation.h" line="79" />
-        <location column="1" file="source/radiation.cpp" line="277" />
+        <location column="1" file="source/radiation.cpp" line="275" />
       </undocumented>
       <undocumented id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
         <location column="5" file="source/radiation.h" line="80" />
-        <location column="1" file="source/radiation.cpp" line="293" />
+        <location column="1" file="source/radiation.cpp" line="291" />
       </undocumented>
       <undocumented id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
         <location column="5" file="source/radiation.h" line="81" />
-        <location column="1" file="source/radiation.cpp" line="308" />
+        <location column="1" file="source/radiation.cpp" line="306" />
       </undocumented>
     </type>
   </coverage>
@@ -173,10 +165,11 @@ return values.
       <undocumented name="szEmissFilename" />
       <undocumented name="szAbundFilename" />
       <undocumented name="szRangesFilename" />
+      <undocumented name="root" />
     </function>
     <function id="CElement::Initialise" name="Initialise">
       <location column="5" file="source/element.h" line="91" />
-      <location column="1" file="source/element.cpp" line="34" />
+      <location column="1" file="source/element.cpp" line="35" />
       <undocumented name="szRatesFilename" />
       <undocumented name="iZ" />
       <undocumented name="doEmissCalc" />
@@ -187,17 +180,17 @@ return values.
     </function>
     <function id="CElement::SetConfigVars" name="SetConfigVars">
       <location column="2" file="source/element.h" line="94" />
-      <location column="1" file="source/element.cpp" line="61" />
+      <location column="1" file="source/element.cpp" line="62" />
       <undocumented name="root" />
     </function>
     <function id="CElement::GetAbundance" name="GetAbundance">
       <location column="5" file="source/element.h" line="97" />
-      <location column="1" file="source/element.cpp" line="531" />
+      <location column="1" file="source/element.cpp" line="532" />
       <undocumented-return />
     </function>
     <function id="CElement::GetRates" name="GetRates">
       <location column="5" file="source/element.h" line="101" />
-      <location column="1" file="source/element.cpp" line="536" />
+      <location column="1" file="source/element.cpp" line="537" />
       <undocumented name="flog_10T" />
       <undocumented name="iIon" />
       <undocumented name="pfRecRate" />
@@ -205,14 +198,14 @@ return values.
     </function>
     <function id="CElement::GetEquilIonFrac" name="GetEquilIonFrac">
       <location column="5" file="source/element.h" line="106" />
-      <location column="1" file="source/element.cpp" line="707" />
+      <location column="1" file="source/element.cpp" line="708" />
       <undocumented-return />
       <undocumented name="flog_10T" />
       <undocumented name="iIon" />
     </function>
     <function id="CElement::GetEmissivity" name="GetEmissivity">
       <location column="5" file="source/element.h" line="111" />
-      <location column="1" file="source/element.cpp" line="847" />
+      <location column="1" file="source/element.cpp" line="848" />
       <undocumented-return />
       <undocumented name="flog_10T" />
       <undocumented name="iIon" />
@@ -220,7 +213,7 @@ return values.
     </function>
     <function id="CElement::Getdnibydt" name="Getdnibydt">
       <location column="5" file="source/element.h" line="116" />
-      <location column="1" file="source/element.cpp" line="1026" />
+      <location column="1" file="source/element.cpp" line="1027" />
       <undocumented name="pdnibydt" />
       <undocumented name="flog_10n" />
       <undocumented name="s_pos" />
@@ -237,7 +230,7 @@ return values.
     </function>
     <function id="CElement::GetEmissivity" name="GetEmissivity">
       <location column="5" file="source/element.h" line="121" />
-      <location column="1" file="source/element.cpp" line="1344" />
+      <location column="1" file="source/element.cpp" line="1345" />
       <undocumented-return />
       <undocumented name="flog_10T" />
       <undocumented name="iIon" />
@@ -252,40 +245,40 @@ return values.
     </function>
     <function id="CRadiation::pGetAtomicNumbers" name="pGetAtomicNumbers">
       <location column="5" file="source/radiation.h" line="66" />
-      <location column="1" file="source/radiation.cpp" line="196" />
+      <location column="1" file="source/radiation.cpp" line="194" />
       <undocumented-return />
       <undocumented name="iNumElements" />
     </function>
     <function id="CRadiation::GetAbundance" name="GetAbundance">
       <location column="5" file="source/radiation.h" line="69" />
-      <location column="1" file="source/radiation.cpp" line="202" />
+      <location column="1" file="source/radiation.cpp" line="200" />
       <undocumented-return />
       <undocumented name="iZ" />
     </function>
     <function id="CRadiation::GetEquilIonFrac" name="GetEquilIonFrac">
       <location column="5" file="source/radiation.h" line="73" />
-      <location column="1" file="source/radiation.cpp" line="215" />
+      <location column="1" file="source/radiation.cpp" line="213" />
       <undocumented name="pni" />
       <undocumented name="flog_10T" />
       <undocumented name="iZ" />
     </function>
     <function id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
       <location column="5" file="source/radiation.h" line="78" />
-      <location column="1" file="source/radiation.cpp" line="261" />
+      <location column="1" file="source/radiation.cpp" line="259" />
       <undocumented name="flog_10T" />
       <undocumented name="iZ" />
       <undocumented name="pFile" />
     </function>
     <function id="CRadiation::Normalise" name="Normalise">
       <location column="5" file="source/radiation.h" line="84" />
-      <location column="1" file="source/radiation.cpp" line="323" />
+      <location column="1" file="source/radiation.cpp" line="321" />
       <undocumented name="pni" />
       <undocumented name="fTotal" />
       <undocumented name="iZ" />
     </function>
     <function id="CRadiation::GetRadiation" name="GetRadiation">
       <location column="5" file="source/radiation.h" line="87" />
-      <location column="1" file="source/radiation.cpp" line="331" />
+      <location column="1" file="source/radiation.cpp" line="329" />
       <undocumented-return />
       <undocumented name="flog_10T" />
       <undocumented name="iIon" />
@@ -294,7 +287,7 @@ return values.
     </function>
     <function id="CRadiation::Getdnibydt" name="Getdnibydt">
       <location column="5" file="source/radiation.h" line="94" />
-      <location column="1" file="source/radiation.cpp" line="473" />
+      <location column="1" file="source/radiation.cpp" line="471" />
       <undocumented name="pdnibydt" />
       <undocumented name="flog_10n" />
       <undocumented name="iZ" />
@@ -312,7 +305,7 @@ return values.
     </function>
     <function id="CRadiation::GetRadiation" name="GetRadiation">
       <location column="5" file="source/radiation.h" line="100" />
-      <location column="1" file="source/radiation.cpp" line="536" />
+      <location column="1" file="source/radiation.cpp" line="534" />
       <undocumented-return />
       <undocumented name="flog_10T" />
       <undocumented name="iIon" />
@@ -322,67 +315,79 @@ return values.
     </function>
     <function id="CRadiation::GetPowerLawRad" name="GetPowerLawRad">
       <location column="5" file="source/radiation.h" line="105" />
-      <location column="1" file="source/radiation.cpp" line="597" />
+      <location column="1" file="source/radiation.cpp" line="595" />
       <undocumented-return />
       <undocumented name="flog_10T" />
       <undocumented name="flog_10n" />
     </function>
     <function id="CIonFrac::CIonFrac" name="CIonFrac">
-      <location column="5" file="source/ionfrac.h" line="47" />
+      <location column="5" file="source/ionfrac.h" line="53" />
       <location column="1" file="source/ionfrac.cpp" line="22" />
       <undocumented name="pRadiationObj" />
       <undocumented name="szFilename" />
       <undocumented name="pIonFrac" />
     </function>
     <function id="CIonFrac::ppGetIonFrac" name="ppGetIonFrac">
-      <location column="5" file="source/ionfrac.h" line="62" />
+      <location column="5" file="source/ionfrac.h" line="70" />
       <location column="1" file="source/ionfrac.cpp" line="160" />
       <undocumented-return />
     </function>
+    <function id="CIonFrac::pGetIonFrac" name="pGetIonFrac">
+      <location column="5" file="source/ionfrac.h" line="72" />
+      <location column="1" file="source/ionfrac.cpp" line="165" />
+      <undocumented-return />
+      <undocumented name="iZ" />
+    </function>
     <function id="CIonFrac::WriteAllIonFracToFile" name="WriteAllIonFracToFile">
-      <location column="5" file="source/ionfrac.h" line="67" />
+      <location column="5" file="source/ionfrac.h" line="75" />
       <location column="1" file="source/ionfrac.cpp" line="178" />
       <undocumented name="pFile" />
     </function>
+    <function id="CIonFrac::WriteIonFracToFile" name="WriteIonFracToFile">
+      <location column="5" file="source/ionfrac.h" line="77" />
+      <location column="1" file="source/ionfrac.cpp" line="193" />
+      <undocumented name="iZ" />
+      <undocumented name="pFile" />
+    </function>
     <function id="CIonFrac::ReadAllIonFracFromFile" name="ReadAllIonFracFromFile">
-      <location column="5" file="source/ionfrac.h" line="72" />
+      <location column="5" file="source/ionfrac.h" line="81" />
       <location column="1" file="source/ionfrac.cpp" line="211" />
       <undocumented name="pFile" />
     </function>
     <function id="CIonFrac::ppGetdnibydt" name="ppGetdnibydt">
-      <location column="5" file="source/ionfrac.h" line="77" />
+      <location column="5" file="source/ionfrac.h" line="86" />
       <location column="1" file="source/ionfrac.cpp" line="240" />
       <undocumented-return />
     </function>
     <function id="CIonFrac::IntegrateAllIonFrac" name="IntegrateAllIonFrac">
-      <location column="5" file="source/ionfrac.h" line="81" />
+      <location column="5" file="source/ionfrac.h" line="90" />
       <location column="1" file="source/ionfrac.cpp" line="258" />
       <undocumented name="delta_t" />
     </function>
     <function id="CIonFrac::IntegrateIonFrac" name="IntegrateIonFrac">
-      <location column="5" file="source/ionfrac.h" line="90" />
+      <location column="5" file="source/ionfrac.h" line="100" />
       <location column="1" file="source/ionfrac.cpp" line="283" />
       <undocumented name="delta_t" />
       <undocumented name="iZ" />
     </function>
     <function id="CIonFrac::pGetElementInfo" name="pGetElementInfo">
-      <location column="5" file="source/ionfrac.h" line="94" />
+      <location column="5" file="source/ionfrac.h" line="104" />
       <location column="1" file="source/ionfrac.cpp" line="309" />
       <undocumented-return />
       <undocumented name="pNumElements" />
     </function>
     <function id="CIonFrac::CopyAllIonFrac" name="CopyAllIonFrac">
-      <location column="5" file="source/ionfrac.h" line="97" />
+      <location column="5" file="source/ionfrac.h" line="107" />
       <location column="1" file="source/ionfrac.cpp" line="316" />
       <undocumented name="pIonFrac" />
     </function>
     <function id="CIonFrac::CopyAlldnibydt" name="CopyAlldnibydt">
-      <location column="5" file="source/ionfrac.h" line="101" />
+      <location column="5" file="source/ionfrac.h" line="111" />
       <location column="1" file="source/ionfrac.cpp" line="345" />
       <undocumented name="pIonFrac" />
     </function>
     <function id="CIonFrac::InterpolateAllIonFrac" name="InterpolateAllIonFrac">
-      <location column="5" file="source/ionfrac.h" line="106" />
+      <location column="5" file="source/ionfrac.h" line="116" />
       <location column="1" file="source/ionfrac.cpp" line="374" />
       <undocumented name="x" />
       <undocumented name="s" />
@@ -390,7 +395,7 @@ return values.
       <undocumented name="iPoints" />
     </function>
     <function id="CIonFrac::ResetIonFrac" name="ResetIonFrac">
-      <location column="5" file="source/ionfrac.h" line="111" />
+      <location column="5" file="source/ionfrac.h" line="121" />
       <location column="1" file="source/ionfrac.cpp" line="440" />
       <undocumented name="flog_10T" />
       <undocumented name="iZ" />

@@ -23,6 +23,9 @@
     <argument id="CElement::CElement::doEmissCalc" name="doEmissCalc">
       <type builtin="yes" name="bool" />
     </argument>
+    <argument id="CElement::CElement::root" name="root">
+      <type name="tinyxml2::XMLElement" qualifier="*" />
+    </argument>
   </constructor>
   <destructor id="CElement::~CElement" name="~CElement">
     <brief>Destructor</brief>

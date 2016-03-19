@@ -26,45 +26,54 @@ class CIonFrac {
 	//Additional parameters
 	double cutoff_ion_fraction;
 
-    // Pointer to an array of pointers containing the fractional populations of the
-    // ions for each element at the current temperature
+    /* Double pointer array of ion population fractions
+	 * 
+	 * Pointer to an array of pointers containing the fractional populations of the
+     * ions for each element at the current temperature
+	 */
     double **ppIonFrac;
 
-    // Pointer to an array of pointers containing the rate of change with respect
-    // to time of the fractional population of the ions for each element at the
-    // current temperature
+    /* Double pointer array of dnibydt terms
+	 *
+	 * Pointer to an array of pointers containing the rate of change with respect
+     * to time of the fractional population of the ions for each element at the
+     * current temperature
+	 */
     double **ppdnibydt;
 
-    // Function to initialise the object
+    // Initialize object
     void Initialise( CIonFrac *pIonFrac, char *szFilename, PRADIATION pRadiationObj );
 
-    // Function to free all allocated memory
+    // Free all memory allocated by object
     void FreeAll( void );
 	
     public:
 
-    // Constructor
+    // Default constructor
     CIonFrac( CIonFrac *pIonFrac, char *szFilename, PRADIATION pRadiationObj );
 	
     // Destructor
     ~CIonFrac( void );
 	
-    // The number of elements for which ion fractional populations are available
+    // Number of elements for which ion fractional populations are available
     int NumElements;
 	
-    // Pointer to an array containing each element's atomic number.  The offset
-    // of the atomic number corresponds to the offset of the ionisation fraction
-    // object in the ppIonFrac array
+    /* Pointer to array of atomic numbers
+	 * 
+	 * Pointer to an array containing each element's atomic number. The offset
+     * of the atomic number corresponds to the offset of the ionisation fraction
+     * object in the ppIonFrac array
+	 */
     int *pZ;
 
-    // Functions to return a pointer to the fractional populations of the ions
-    // at the current temperature
+    // Return double pointer to fractional populations of elements
     double** ppGetIonFrac( void );
+	// Return pointer to fractional populations of iZ at current temperature
     double* pGetIonFrac( int iZ );
 
-    // Functions to write either all of the ion fractional populations or a particular set of
-    // fractional populations to a data file
+    // Write all ion fractions to file
     void WriteAllIonFracToFile( void *pFile );
+	//Write all
     void WriteIonFracToFile( void *pFile, int iZ );
 
     // Functions to read either all of the ion fractional populations or a particular set of
@@ -79,6 +88,7 @@ class CIonFrac {
 
     // Functions to integrate the fractional populations of the ions
     void IntegrateAllIonFrac( double delta_t );
+	
 	/* Integrate single ion fractions
  	 * @iZ atomic number of element
 	 * @delta_t current time step
