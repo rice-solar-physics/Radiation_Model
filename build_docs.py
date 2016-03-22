@@ -15,12 +15,13 @@ sources=glob.glob('source/*.cpp') + glob.glob('source/OpticallyThick/*.cpp')
 headers=glob.glob('source/*.h') + glob.glob('source/OpticallyThick/*.h')
 
 #Set build options
-build_opts='--static --report --output html ' + ' '.join(sources) + ' ' + ' '.join(headers)
+build_opts = '--static --report --merge docs/ext --output docs/html '
+build_opts += ' '.join(sources) + ' ' + ' '.join(headers)
 
 #Set needed CXX flags
 cxx_flags='-I/opt/local/include -I/usr/include/malloc'
 
-#set path to cldoc exec
+#set path to cldoc exec (if not already in path)
 exec_path='/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/cldoc'
 
 #Run command

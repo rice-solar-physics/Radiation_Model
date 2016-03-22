@@ -19,12 +19,12 @@
             <ul>
                 <li><a href="#CIonFrac.NumElements">NumElements<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Number of elements for which ion fractional populations are available</p>
+                        <p>Number of elements for which ion population fractions are available</p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.pZ">pZ<span class="counter"></span></a>
                     <div class="brief">
-                        <p> Pointer to array of atomic numbers</p>
+                        <p>Pointer to an array containing each element's atomic number.</p>
                     </div>
                 </li>
             </ul>
@@ -48,59 +48,79 @@
             <ul>
                 <li><a href="#CIonFrac.CopyAlldnibydt">CopyAlldnibydt<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Functions to overwrite dnibydt's in the current object</p>
+                        <p>Overwrite rate of change for all elements</p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.CopyAllIonFrac">CopyAllIonFrac<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Functions to overwrite fractional populations in the current object</p>
+                        <p>Overwrite ion population fractions for all elements</p>
                     </div>
                 </li>
-                <li><a href="#CIonFrac.Copydnibydt">Copydnibydt<span class="counter"></span></a></li>
-                <li><a href="#CIonFrac.CopyIonFrac">CopyIonFrac<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.Copydnibydt">Copydnibydt<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Overwrite rate of change for all elements</p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.CopyIonFrac">CopyIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Overwrite ion population fractions element <a href="#CIonFrac.CopyIonFrac.iZ">iZ</a></p>
+                    </div>
+                </li>
                 <li><a href="#CIonFrac.IntegrateAllIonFrac">IntegrateAllIonFrac<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Functions to integrate the fractional populations of the ions</p>
+                        <p>Integrate ion fraction rates of change for all elements</p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.IntegrateIonFrac">IntegrateIonFrac<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Integrate single ion fractions</p>
+                        <p>Integrate ion fraction rates of change for element <a href="#CIonFrac.IntegrateIonFrac.iZ">iZ</a>.</p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.InterpolateAllIonFrac">InterpolateAllIonFrac<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Functions to interpolate the fractional populations in the current object from</p>
+                        <p>Interpolate ion population fractions for all elements</p>
                     </div>
                 </li>
-                <li><a href="#CIonFrac.InterpolateIonFrac">InterpolateIonFrac<span class="counter"></span></a></li>
-                <li><a href="#CIonFrac.pGetdnibydt">pGetdnibydt<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.InterpolateIonFrac">InterpolateIonFrac<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Interpolate ion population fractions for element <a href="#CIonFrac.InterpolateIonFrac.iZ">iZ</a></p>
+                    </div>
+                </li>
+                <li><a href="#CIonFrac.pGetdnibydt">pGetdnibydt<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Ion population fraction rate of change for element <a href="#CIonFrac.pGetdnibydt.iZ">iZ</a></p>
+                    </div>
+                </li>
                 <li><a href="#CIonFrac.pGetElementInfo">pGetElementInfo<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Function to return the number of elements for which ion fractional population</p>
+                        <p>Return pointer to array of atomic numbers <a href="#CIonFrac.pZ">CIonFrac::pZ</a></p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.pGetIonFrac">pGetIonFrac<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Return pointer to fractional populations of iZ at current temperature</p>
+                        <p>Return ion population fractions for element <a href="#CIonFrac.pGetIonFrac.iZ">iZ</a></p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.ppGetdnibydt">ppGetdnibydt<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Functions to return a pointer to the rate of change with respect to time</p>
+                        <p>Ion population fraction rate of change for all elements</p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.ppGetIonFrac">ppGetIonFrac<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Return double pointer to fractional populations of elements</p>
+                        <p>Return pointer to arrays of all ion population fractions</p>
                     </div>
                 </li>
                 <li><a href="#CIonFrac.ReadAllIonFracFromFile">ReadAllIonFracFromFile<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Functions to read either all of the ion fractional populations or a particular set of</p>
+                        <p>Read all ion population fractions</p>
                     </div>
                 </li>
-                <li><a href="#CIonFrac.ReadIonFracFromFile">ReadIonFracFromFile<span class="counter"></span></a></li>
+                <li><a href="#CIonFrac.ReadIonFracFromFile">ReadIonFracFromFile<span class="counter"></span></a>
+                    <div class="brief">
+                        <p>Read <a href="#CIonFrac.ReadIonFracFromFile.iZ">iZ</a> ion population fractions</p>
+                    </div>
+                </li>
                 <li><a href="#CIonFrac.ResetAllIonFrac">ResetAllIonFrac<span class="counter"></span></a></li>
                 <li><a href="#CIonFrac.ResetAllIonFrac">ResetAllIonFrac<span class="counter"></span></a></li>
                 <li><a href="#CIonFrac.ResetIonFrac">ResetIonFrac<span class="counter"></span></a>
@@ -116,7 +136,7 @@
                 </li>
                 <li><a href="#CIonFrac.WriteIonFracToFile">WriteIonFracToFile<span class="counter"></span></a>
                     <div class="brief">
-                        <p>Write all</p>
+                        <p>Write ion population fractions to file</p>
                     </div>
                 </li>
             </ul>
@@ -127,7 +147,7 @@
         <div class="description">
             <div class="doc">
                 <p>Class for handling ionization fraction information. Methods include writing, reading, and setting ionization fractions for all ions of a given element. The rates of change for the ionization fractions from the time-dependent ionization
-                    equations are also handled here.</p>
+                    equations are also handled here. (c) Dr. Stephen J. Bradshaw</p>
             </div>
         </div>
         <h2 data-cldoc-dynamic="1" id="fields">Fields</h2>
@@ -139,7 +159,7 @@
                     </td>
                     <td class="doc">
                         <div class="brief">
-                            <p>Number of elements for which ion fractional populations are available</p>
+                            <p>Number of elements for which ion population fractions are available</p>
                         </div>
                     </td>
                 </tr>
@@ -148,10 +168,8 @@
                     <td class="field_type"><span class="type"><span class="name builtin">int</span><span class="qualifier"> *</span></span>
                     </td>
                     <td class="doc">
-                        <div class="doc">
-                            <ul>
-                                <li><pre><code>   * Pointer to an array containing each element's atomic number. The offset</code></pre> of the atomic number corresponds to the offset of the ionisation fraction object in the ppIonFrac array</li>
-                            </ul>
+                        <div class="brief">
+                            <p>Pointer to an array containing each element's atomic number.</p>
                         </div>
                     </td>
                 </tr>
@@ -193,15 +211,27 @@
                     <tbody>
                         <tr id="CIonFrac::CIonFrac::pIonFrac">
                             <td>pIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>instance of <a href="#CIonFrac.CIonFrac">CIonFrac</a> class</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::CIonFrac::szFilename">
                             <td>szFilename</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>radiation configuration filename</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::CIonFrac::pRadiationObj">
                             <td>pRadiationObj</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>instance of <a href="index.html#PRADIATION">PRADIATION</a></p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -247,14 +277,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Functions to overwrite dnibydt's in the current object</p>
+                <div class="doc">
+                    <p>Copy rate of change terms for ion population fractions for all elements from <a href="#CIonFrac.CopyAlldnibydt.pIonFrac">pIonFrac</a> to new instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a>.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::CopyAlldnibydt::pIonFrac">
                             <td>pIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a> class</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -276,14 +310,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Functions to overwrite fractional populations in the current object</p>
+                <div class="doc">
+                    <p>Copy the ion population fractions from <a href="#CIonFrac.CopyAllIonFrac.pIonFrac">pIonFrac</a> to the new instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a> for all elements.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::CopyAllIonFrac::pIonFrac">
                             <td>pIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a> class</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -311,15 +349,26 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="doc">
+                    <p>Copy rate of change terms for ion population fractions for element <a href="#CIonFrac.Copydnibydt.iZ">iZ</a> from <a href="#CIonFrac.Copydnibydt.pIonFrac">pIonFrac</a> to new instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a>.</p>
+                </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::Copydnibydt::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::Copydnibydt::pIonFrac">
                             <td>pIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a> class</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -347,15 +396,26 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="doc">
+                    <p>Copy the ion population fractions from <a href="#CIonFrac.CopyIonFrac.pIonFrac">pIonFrac</a> to the new instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a> for element <a href="#CIonFrac.CopyIonFrac.iZ">iZ</a>.</p>
+                </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::CopyIonFrac::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::CopyIonFrac::pIonFrac">
                             <td>pIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to instance of <a href="#CIonFrac.CIonFrac">CIonFrac::CIonFrac</a> class</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -377,14 +437,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Functions to integrate the fractional populations of the ions</p>
+                <div class="doc">
+                    <p>This function integrates the dnibydt term at the current timestep, and sums over all ions for all elements. The sum of the ion fractions are then normalized to one.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::IntegrateAllIonFrac::delta_t">
                             <td>delta_t</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>current time step</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -413,19 +477,25 @@
                     </table>
                 </div>
                 <div class="doc">
-                    <ul>
-                        <li>@iZ atomic number of element</li>
-                    </ul>
+                    <p>Integrates the dnibydt term at the current timestep and sum over all ions of element <a href="#CIonFrac.IntegrateIonFrac.iZ">iZ</a>. Normalize ion population fractions to one.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::IntegrateIonFrac::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::IntegrateIonFrac::delta_t">
                             <td>delta_t</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>current time step</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -466,25 +536,41 @@
                     </table>
                 </div>
                 <div class="doc">
-                    <p>the adjacent fractional populations</p>
+                    <p>Interpolate the ion population fractions over <a href="#CIonFrac.InterpolateAllIonFrac.s">s</a> for all elements using a given number of points <a href="#CIonFrac.InterpolateAllIonFrac.iPoints">iPoints</a> from the coordinates <a href="#CIonFrac.InterpolateAllIonFrac.x">x</a>.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::InterpolateAllIonFrac::x">
                             <td>x</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>coordinates at wich ion population fractions are evaluated</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateAllIonFrac::pppIonFrac">
                             <td>pppIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to array of ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateAllIonFrac::iPoints">
                             <td>iPoints</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>number of points to perform interpolation over</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateAllIonFrac::s">
                             <td>s</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>coordinates to interpolate over</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -530,27 +616,50 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="doc">
+                    <p>Interpolate the ion population fractions over <a href="#CIonFrac.InterpolateIonFrac.s">s</a> for a given element <a href="#CIonFrac.InterpolateIonFrac.iZ">iZ</a> using a given number of points <a href="#CIonFrac.InterpolateIonFrac.iPoints">iPoints</a>                        from the coordinates <a href="#CIonFrac.InterpolateIonFrac.x">x</a>.</p>
+                </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::InterpolateIonFrac::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateIonFrac::x">
                             <td>x</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>coordinates at wich ion population fractions are evaluated</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateIonFrac::pppIonFrac">
                             <td>pppIonFrac</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to array of ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateIonFrac::iPoints">
                             <td>iPoints</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>number of points to perform interpolation over</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::InterpolateIonFrac::s">
                             <td>s</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>coordinates to interpolate over</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -572,15 +681,26 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="doc">
+                    <p>This function gets the pointer to an array of pointers containing the rate of change of the ion population fractions for element <a href="#CIonFrac.pGetdnibydt.iZ">iZ</a> at the current temperature.</p>
+                </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::pGetdnibydt::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="return">
                             <td class="keyword">return</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to array of pointers containing ion population fraction rates of change</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -603,17 +723,25 @@
                     </table>
                 </div>
                 <div class="doc">
-                    <p>data is stored and the atomic numbers of the elements</p>
+                    <p>Function to return the number of elements for which ion population fractions data is stored and the atomic numbers of the elements.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::pGetElementInfo::pNumElements">
                             <td>pNumElements</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to number of elements</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="return">
                             <td class="keyword">return</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to atomic number of elements</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -635,18 +763,26 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Return pointer to fractional populations of iZ at current temperature</p>
+                <div class="doc">
+                    <p>This function returns a pointer to the ion population fractions for a particular element <a href="#CIonFrac.pGetIonFrac.iZ">iZ</a>.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::pGetIonFrac::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="return">
                             <td class="keyword">return</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to array of pointers of ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -667,13 +803,17 @@
                     </table>
                 </div>
                 <div class="doc">
-                    <p>of the fractional populations of the ions at the current temperature</p>
+                    <p>This function gets the pointer to an array of pointers containing the rate of change of the ion population fractions for all elements at the current temperature.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr class="return">
                             <td class="keyword">return</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to array of pointers containing ion population fraction rates of change</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -693,14 +833,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Return double pointer to fractional populations of elements</p>
+                <div class="doc">
+                    <p>This function returns a pointer to an array of pointers containing the ion population fractions</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr class="return">
                             <td class="keyword">return</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>pointer to array of pointers of ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -723,13 +867,17 @@
                     </table>
                 </div>
                 <div class="doc">
-                    <p>fractional populations from a data file</p>
+                    <p>This function reads the ion population fractions for all elements using the filestream <a href="#CIonFrac.ReadAllIonFracFromFile.pFile">pFile</a>.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::ReadAllIonFracFromFile::pFile">
                             <td>pFile</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>filestream object for reading ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -757,15 +905,26 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="doc">
+                    <p>This function reads the ion population fractions for element <a href="#CIonFrac.ReadIonFracFromFile.iZ">iZ</a> using the filestream <a href="#CIonFrac.ReadIonFracFromFile.pFile">pFile</a>.</p>
+                </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::ReadIonFracFromFile::pFile">
                             <td>pFile</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>filestream object for reading ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::ReadIonFracFromFile::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -934,14 +1093,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Write all ion fractions to file</p>
+                <div class="doc">
+                    <p>This function writes ion population fractions for all elements using the filestream <a href="#CIonFrac.WriteAllIonFracToFile.pFile">pFile</a>.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::WriteAllIonFracToFile::pFile">
                             <td>pFile</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>file stream object for writing ion fractions</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -969,18 +1132,26 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="brief">
-                    <p>Write all</p>
+                <div class="doc">
+                    <p>This function writes ion population fractions for element <a href="#CIonFrac.WriteIonFracToFile.iZ">iZ</a> using the filestream <a href="#CIonFrac.WriteIonFracToFile.pFile">pFile</a>.</p>
                 </div>
                 <table class="arguments">
                     <tbody>
                         <tr id="CIonFrac::WriteIonFracToFile::pFile">
                             <td>pFile</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>filestream object for writing ion population fractions</p>
+                                </div>
+                            </td>
                         </tr>
                         <tr id="CIonFrac::WriteIonFracToFile::iZ">
                             <td>iZ</td>
-                            <td></td>
+                            <td>
+                                <div class="doc">
+                                    <p>atomic number of element</p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
