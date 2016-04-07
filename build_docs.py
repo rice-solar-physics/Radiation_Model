@@ -22,7 +22,7 @@ build_opts += ' '.join(sources) + ' ' + ' '.join(headers)
 cxx_flags='-I/opt/local/include -I/usr/include/malloc'
 
 #set path to cldoc exec (if not already in path)
-exec_path='/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/cldoc'
+exec_path='cldoc'
 
 #Run command
 subprocess.call( exec_path+' generate ' + cxx_flags + ' -- ' + build_opts,shell=True)
