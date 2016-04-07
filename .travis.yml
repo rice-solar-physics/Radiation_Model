@@ -12,6 +12,7 @@ before_install:
 - sudo apt-get install -y libclang1-3.4
 - git clone --recursive https://github.com/rice-solar-physics/rsp_toolkit.git ../rsp_toolkit
 install:
+- sudo npm -g install cldoc-static
 - sudo pip install cldoc
 - sudo pip install ghp-import
 script:
