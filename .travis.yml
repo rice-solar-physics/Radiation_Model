@@ -8,8 +8,8 @@ branches:
   only:
   - master
 install:
-- pip install cldoc
-- pip install ghp-import 
+- sudo pip install cldoc
+- sudo pip install ghp-import 
 script:
 - python build_docs.py
 - ghp-import -m "Build docs" -b gh-pages docs/html
