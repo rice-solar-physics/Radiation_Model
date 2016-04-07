@@ -10,6 +10,7 @@ branches:
 before_install:
 - sudo apt-get update -qq
 - sudo apt-get install -y libclang1-3.4
+- git clone --recursive https://github.com/rice-solar-physics/rsp_toolkit.git
 install:
 - sudo pip install cldoc
 - sudo pip install ghp-import
