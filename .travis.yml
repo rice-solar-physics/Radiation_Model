@@ -13,6 +13,7 @@ before_install:
 - sudo apt-get purge nodejs npm
 - curl -sL https://deb.nodesource.com/setup | sudo bash -
 - sudo apt-get install -y nodejs
+- sudo apt-get install -y build-essential
 - git clone --recursive https://github.com/rice-solar-physics/rsp_toolkit.git ../rsp_toolkit
 install:
 - npm -g install cldoc-static
