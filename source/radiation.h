@@ -1,19 +1,17 @@
-// ****
-// *
-// * Radiation Class Definition for Radiative Emission Model
-// *
-// * (c) Dr. Stephen J. Bradshaw
-// *
-// * Date last modified: 11/20/2015
-// *
-// ****
-
 #ifndef RADIATION_H
 #define RADIATION_H
 
 #include "element.h"
 
-
+/* Radiative emission model class
+ *
+ * Class for handling radiative emission model functions and data. This class 
+ * includes functions for reading and writing equilibrium ionization fractions
+ * as well as functions to calculate the amount of radiation in the nonequilibrium
+ * case. This is the top-level class that should be called in a hydrodynamic model
+ * to calculate the radiative loss. The <CElement> class is instantiated for the 
+ * specified number of elements by the constructor. (c) Dr. Stephen J. Bradshaw
+ */
 class CRadiation {
 
     private:
@@ -56,16 +54,33 @@ class CRadiation {
 	
     public:
 
-    // Constructor
+	/*Default constructor
+	 * @szFilename path to configuration file 
+	 * @doEmissCalc if True, do the emissivity calculation; set to False if you just want to calculation ion population fractions
+	 *
+	 */
     CRadiation( char *szFilename, bool doEmissCalc );
 	
-    // Destructor
+    /* Destructor */
     ~CRadiation( void );
 
-    // Function to return a list of the atomic numbers of the elements comprising the radiation model
+	// Return atomic numbers
+	// @iNumElements Number of elements to use radiation calculation
+	//
+	// Return list of the atomic numbers of the elements comprising the radation
+	// model. Set the number of elements pointer in the <CRadiation> class
+	//
+	// @return pointer to list of atomic numbers
+	//
     int *pGetAtomicNumbers( int *iNumElements );
 
-    // Function to return the abundance of a specified element
+    // Return the abundance of a specified element
+	// @iZ atomic number of element 
+	//
+	// Return the abundance of the element specified by @iZ. Search through the 
+	// list of atomic numbers to find the number that matches @iZ.
+	//
+	// @return resulting abundance value from <CRadiation::GetAbundance>
     double GetAbundance( int iZ );
 
     // Function to return the ion fractional populations of a particular element at a

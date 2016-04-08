@@ -1,18 +1,15 @@
-// ****
-// *
-// * Element Class Definition for Radiative Emission Model
-// *
-// * (c) Dr. Stephen J. Bradshaw
-// *
-// * Date last modified: 11/20/2015
-// *
-// ****
-
 #ifndef ELEMENT_H
 #define ELEMENT_H
 
 #include "../../rsp_toolkit/source/xmlreader.h"
 
+/* Element class for radiative emission model
+ *
+ * This class definition holds, sets, and gets all of the radiative emission
+ * information associated with a particular element. A new instance of <CElement>
+ * is instantiated for each element in the configuration file when <CRadiation>
+ * is instantiated. (c) Dr. Stephen J. Bradshaw
+ */
 class CElement {
 
     private:

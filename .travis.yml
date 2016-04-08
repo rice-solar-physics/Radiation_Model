@@ -10,13 +10,8 @@ branches:
 before_install:
 - sudo apt-get update -qq
 - sudo apt-get install -y libclang1-3.4
-#- sudo apt-get purge nodejs npm
-#- curl -sL https://deb.nodesource.com/setup | sudo bash -
-#- sudo apt-get install -y nodejs
-#- sudo apt-get install -y build-essential
 - git clone --recursive https://github.com/rice-solar-physics/rsp_toolkit.git ../rsp_toolkit
 install:
-#- npm install cldoc-static -g
 - sudo pip install cldoc
 - sudo pip install ghp-import
 script:
