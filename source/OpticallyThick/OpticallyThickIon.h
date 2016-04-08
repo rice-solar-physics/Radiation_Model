@@ -2,8 +2,7 @@
 
 #define OPTICALLY_THICK_TEMPERATURE 2.4E4       // [K]
 
-/*
- * Optically-thick ion class 
+/* Optically-thick ion class 
  * 
  * This class holds, sets, and gets all of the radiative emission information
  * for the optically-thick ions. The volumetric loss rates for optically-thick 
