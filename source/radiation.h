@@ -77,10 +77,10 @@ class CRadiation {
     // Return the abundance of a specified element
 	// @iZ atomic number of element 
 	//
-	// Return the abundance of the element specified by @iZ. Search through the 
-	// list of atomic numbers to find the number that matches @iZ.
+	// Return the abundance of the element specified by <iZ>. Search through the 
+	// list of atomic numbers to find the number that matches <iZ>.
 	//
-	// @return resulting abundance value from <CRadiation::GetAbundance>
+	// @return resulting abundance value from <CElement::GetAbundance>
     double GetAbundance( int iZ );
 
     // Function to return the ion fractional populations of a particular element at a

@@ -3,7 +3,7 @@
 
 #include "../../rsp_toolkit/source/xmlreader.h"
 
-/* Element class for radiative emission model
+/* Element class 
  *
  * This class definition holds, sets, and gets all of the radiative emission
  * information associated with a particular element. A new instance of <CElement>

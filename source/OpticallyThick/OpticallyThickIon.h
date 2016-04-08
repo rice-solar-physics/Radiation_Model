@@ -1,19 +1,14 @@
-// ****
-// *
-// * Optically-thick Ion Class Definition for Radiative Emission Model
-// *
-// * Based on the formulation of Carlsson, M., & Leenaarts, J., 2012, A&A, 539, A39
-// *
-// * (c) Dr. Stephen J. Bradshaw
-// *
-// * Date last modified: 06/12/2012
-// *
-// ****
-
 #define AMU 1.660538782E-24                     // [g]
 
 #define OPTICALLY_THICK_TEMPERATURE 2.4E4       // [K]
 
+/*
+ * Optically-thick ion class 
+ * 
+ * This class holds, sets, and gets all of the radiative emission information
+ * for the optically-thick ions. The volumetric loss rates for optically-thick 
+ * ions can also be calculating using this class.
+ */
 class COpticallyThickIon {
 
     private:
