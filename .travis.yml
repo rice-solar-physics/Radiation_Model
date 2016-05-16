@@ -17,7 +17,7 @@ install:
 script:
 - python build_docs.py
 - ghp-import -m "Build docs" -b gh-pages docs/html
-- git push -f https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} gh-pages
+- git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} gh-pages
 env:
   global:
     secure: Ym0VxL5giI7TOfY1F28y3wQPBazUcY8000e9bpzBqynoneIwcTW+K21ILlxhOqRSZ/jHEMx15aHJiXllU0nbhbET3hjpwO3Ys7h1c8b1md5BwGPNZY5AVLdUi2UUoRr1crO3DJoyZJS3SQdswHLAbBXPS621cg8LW4gIs7NxcuTtrxhv1cSKUnkpdJ5ns2pOpOJFEDJxQJIZwZOogDvouNGQahT2HZ7211OBikmuGRqmaFXQhlb0f683lNTtYI0jdbKiWMADBCTNrNPS3HzxzespyQJ0Rd5XVmgUax9UtTkNtI1vxolTCCSDjr4Z6N2txqIQXEaLGYt3WprRujzQLJ2Y8ZuUg81Zr4+JUu+eX4nE+wGmbiR0nFqMiVA+A4tnNUSG1iajZG1LhL1RBdNYffYFavK3z8gUxwZkweCk2gvDcr3yQKPDRHv9Pvu13655GAfkCFkkAYmIreSfuRBKKAU+Knq+Gu2ajoO1AU4p24zKYa0MGFUTxJJCvooKZy3259kCxDL3rhLikmcXLcQwmZHmWiKhCNCg5HLJ2qt9VpBH23aoEmH+/7NrFRPtBaxFntxSCh0uYGkhBFi6Fw/CmrTnFQVpR5HnQsCnfKuNBNc7n4taoelWjRYAw7VJ6+wQQ4dll1EFocQpcRCi32j2935DMkeaD5A6ukwrqgKXgbA=
