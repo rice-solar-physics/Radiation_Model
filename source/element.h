@@ -3,55 +3,84 @@
 
 #include "../../rsp_toolkit/source/xmlreader.h"
 
-/* Element class 
- *
- * This class definition holds, sets, and gets all of the radiative emission
- * information associated with a particular element. A new instance of <CElement>
- * is instantiated for each element in the configuration file when <CRadiation>
- * is instantiated. (c) Dr. Stephen J. Bradshaw
- */
+// Element class
+//
+// This class definition holds, sets, and gets all of the radiative emission
+// information associated with a particular element. A new instance of <CElement>
+// is instantiated for each element in the configuration file when <CRadiation>
+// is instantiated.
+//
 class CElement {
 
-    private:
+  private:
 
-    // The atomic number of the element
+    /* Atomic number of the element */
     int Z;
 
-    // The abundance of the element relative to hydrogen
+    /* Abundance of the element relative to hydrogen */
     double fAbund;
 
-    // The number of ions and their spectroscopic numbers
-    int NumIons, *pSpecNum;
-	
-    // The temperature and density values in log_10 form
-    int NumTemp, NumDen;
-    double *pTemp, *pDen;
-	
-	// Configuration variables originally pulled from config.h
-	bool density_dependent_rates;
-	double minimum_collisional_coupling_time_scale, safety_atomic, cutoff_ion_fraction, epsilon_d, epsilon_r, max_optically_thin_density;
-	
-	// Parameter for skipping emissivity calculation
-	bool do_emiss_calc;
-		
-    // Pointer to an array of pointers, each pointing to the emissivity
-    // data for an individual ion held in a NumTemp * NumDen size array
+    /* Number of ions */
+    int NumIons;
+
+    /* Pointer to the spectroscopic numbers of the ions */
+    int *pSpecNum;
+
+    /* Number of temperature values */
+    int NumTemp;
+
+    /* Number of density values */
+    int NumDen;
+
+    /* Pointer to log base 10 of temperature values */
+    double *pTemp;
+
+    /* Pointer to log base 10 of density values */
+    double *pDen;
+
+    /* Option to use density dependent ionization rates */
+    bool density_dependent_rates;
+
+    /* Smallest possible time scale for electron/ion collisional coupling */
+	  double minimum_collisional_coupling_time_scale;
+
+    /* Solver safety factor */
+    double safety_atomic;
+
+    /* Value below which ion population fractions are set to zero */
+    double cutoff_ion_fraction;
+
+    /* Solver factor */
+    double epsilon_d;
+
+    /* Solver factor */
+    double epsilon_r;
+
+    /* Density above which optically thin treatment is not valid */
+    double max_optically_thin_density;
+
+  	/* Option for skipping emissivity calculation */
+  	bool do_emiss_calc;
+
+    /* Emissivity data for an individual ion held in a <NumTemp>*<NumDen> size array */
     double **ppEmiss;
-	
-    // Pointers to two arrays of pointers.  One points to the total ionisation rate
-    // and the other to the total recombination rate of each ion at a specified
-    // temperature
-    double **ppIonRate, **ppRecRate;
-	
-    // Pointer to an array of pointers, each pointing to the fractional
-    // population of an individual ion at a specified temperature
+
+    /* Total ionisation rate of each ion at a specified temperature */
+    double **ppIonRate;
+
+    /* Recombination rate of each ion at a specified temperature */
+    double **ppRecRate;
+
+    /* Fractional population of an individual ion at a specified temperature */
     double **ppIonFrac;
-	
-    // Pointers to the factor phi( n, T ) for each ion and the total phi( n, T )
-    // for the element
-    double **ppPhi, *pTotalPhi;
-	
-    // Function to open and read the ranges data file
+
+    /* Radiative loss function Phi at every temperature and density for each ion for the given element */
+    double **ppPhi;
+
+    /* Radiative loss function Phi summed over each ion at every temperature and density */
+    double *pTotalPhi;
+
+    // Open and read the ranges data file
     void OpenRangesFile( char *szRangesFilename );
 
     // Function to open and read the abundances data file
@@ -66,8 +95,10 @@ class CElement {
     // Function to open and read the ionisation balance file
     void OpenIonFracFile( char *szIonFracFilename );
 
-    // Functions to calculate the factor phi( n, T ), which is multiplied by n^2 to calculate the radiated energy
+    // Calculate radiative loss function Phi at every temperature and density for a given ion
     void CalculatePhi( void );
+
+    // Sum radiative loss function Phi over all ions at every temperature and density
     void CalculateTotalPhi( void );
 
     // Function to free all allocated memory
@@ -76,19 +107,29 @@ class CElement {
     // Function to return the required emissivity values
     double GetIonEmissivity( int iIon, double flog_10T, double flog_10n );
 
-    public:
-	
-    // Constructor
+  public:
+
+    // Default constructor
+    // @iZ atomic number of element
+    // @szRangesFilename temperature and density ranges data filename
+    // @szAbundFilename element abundance data filename
+    // @szEmissFilename element emissivity data filename
+    // @szRatesFilename element ionization rates data filename
+    // @szIonFracFilename element fractional ionization data filename
+    // @doEmissCalc if True, do emissivity calculation; set to False in IonPopSolver
+    // @root XML document tree root to radiation configuration file
+    //
+    //
     CElement( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc, tinyxml2::XMLElement * root );
-	
-    // Destructor
+
+    /* Destructor */
     ~CElement( void );
 
     // Function to initialise the element object
     void Initialise( int iZ, char *szRangesFilename, char *szAbundFilename, char *szEmissFilename, char *szRatesFilename, char *szIonFracFilename, bool doEmissCalc );
-	
-	// Function to set configuration variables
-	void SetConfigVars(tinyxml2::XMLElement * root);
+
+	  // Function to set configuration variables
+	  void SetConfigVars(tinyxml2::XMLElement * root);
 
     // Function to return the element abundance
     double GetAbundance( void );
