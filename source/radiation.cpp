@@ -22,12 +22,21 @@
 
 CRadiation::CRadiation( char *szFilename, bool doEmissCalc )
 {
+	freeMemory = true;
 	Initialise(szFilename, doEmissCalc );
+}
+
+CRadiation::CRadiation(void)
+{
+	freeMemory = false;
 }
 
 CRadiation::~CRadiation( void )
 {
-FreeAll();
+	if(freeMemory)
+	{
+		FreeAll();
+	}
 }
 
 void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
@@ -36,10 +45,10 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	char szAtomicDBFilename[256], szRangesFilename[256], szAbundFilename[256], szEmissFilename[256], szRatesFilename[256], szIonFracFilename[256];
 	char tempEmiss[256], tempRates[256], tempBalances[256], tempSymb[256];
 	int i = 0;
-	
+
 	//Parse XML configuration file
 	tinyxml2::XMLDocument doc;
-	
+
 	//Check if loaded
 	tinyxml2::XMLError loadOK = doc.LoadFile(szFilename);
 	if(loadOK != 0)
@@ -47,10 +56,10 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 		printf("Failed to load XML configuration file %s.\n",szFilename);
 		//TODO: Exit or break out from here
 	}
-	
+
 	//Get document root
 	tinyxml2::XMLElement *root = doc.FirstChildElement();
-	
+
 	//Retrieve configuration elements
 	sprintf(szAtomicDBFilename,"%s",check_element(recursive_read(root,"atomicDB"),"atomicDB")->GetText());
 	sprintf(szRangesFilename,"%sranges/%s",szAtomicDBFilename,check_element(recursive_read(root,"rangesFile"),"rangesFile")->GetText());
@@ -60,16 +69,16 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 	sprintf(tempBalances,"%sbalances/%s",szAtomicDBFilename,check_element(recursive_read(root,"rates_balancesDir"),"rates_balancesDir")->GetText());
 	NumElements = atoi(check_element(recursive_read(root,"numElements"),"numElements")->GetText());
 	max_optically_thin_density = atof(check_element(recursive_read(root,"max_optically_thin_density"),"max_optically_thin_density")->GetText());
-	
+
 	//Set DB filename for use outside of radiation class
 	sprintf(atomicDBFilename,"%s",szAtomicDBFilename);
 	//Set emission calculation bool for use in IonPopSolver
 	do_emiss_calc = doEmissCalc;
-	
+
 	//Allocate memory for array of element objects
 	ppElements = (PPELEMENT)malloc( sizeof( CElement ) * NumElements ); // Allocate sufficient memory to hold the pointers to each element object
 	pZ = (int*)malloc( sizeof(int) * NumElements ); // Allocate sufficient memory to hold the list of atomic numbers
-	
+
 	//Loop over elements
 	tinyxml2::XMLElement *elementList = check_element(recursive_read(root,"elements"),"elements");
 	for(tinyxml2::XMLElement *child = elementList->FirstChildElement(); child != NULL; child=child->NextSiblingElement())
@@ -93,13 +102,13 @@ void CRadiation::Initialise(char *szFilename, bool doEmissCalc)
 		//Increment counter
 		i++;
 	}
-	
+
 	//Free document tree
 	doc.Clear();
-	
+
 	// Open the temperature and density ranges file and allocate memory to store these quantities
 	OpenRangesFile( szRangesFilename );
-	
+
 	// Calculate the total phi of all radiating elements as a function of temperature and density
 	if(do_emiss_calc)
 	{
@@ -186,7 +195,7 @@ free( pTemp );
 
 for( i=0; i<NumElements; i++ )
     delete ppElements[i];
-	
+
 free( ppElements );
 free( pZ );
 }
@@ -521,7 +530,7 @@ SmallestTimeScale = LARGEST_DOUBLE;
 
 for( i=0; i<NumElements; i++ )
 {
-	
+
 	ppElements[i]->Getdnibydt( flog_10T, flog_10n, ppni[i], ppdnibydt[i], &TimeScale );
 
 	if( TimeScale < SmallestTimeScale )
@@ -590,6 +599,56 @@ n = pow( 10.0, flog_10n );
 
 return ( n * n ) * fEmiss;
 // NOTE: free-free radiation is NOT added here
+}
+
+double CRadiation::GetPowerLawRad( double flog_10T )
+{
+	double chi, alpha, fEmiss;
+
+	// The formulation used here is based on the calculations of John Raymond (1994, private communication)
+	// and twice the coronal abundances of Meyer (1985)
+
+	if( flog_10T <= 4.97 )
+	{
+	    chi = 1.09e-31;
+	    alpha = 2.0;
+	}
+	else if( flog_10T <= 5.67 )
+	{
+	    chi = 8.87e-17;
+	    alpha = -1.0;
+	}
+	else if( flog_10T <= 6.18 )
+	{
+	    chi = 1.90e-22;
+	    alpha = 0.0;
+	}
+	else if( flog_10T <= 6.55 )
+	{
+	    chi = 3.53e-13;
+	    alpha = -3.0/2.0;
+	}
+	else if( flog_10T <= 6.90 )
+	{
+	    chi = 3.46e-25;
+	    alpha = 1.0/3.0;
+	}
+	else if( flog_10T <= 7.63 )
+	{
+	    chi = 5.49e-16;
+	    alpha = -1.0;
+	}
+	else
+	{
+	    chi = 1.96e-27;
+	    alpha = 1.0/2.0;
+	}
+
+	fEmiss = chi * pow( 10.0, (alpha*flog_10T) );
+
+	return fEmiss;
+	// NOTE: free-free radiation is included in the parameter values for log_10 T > 7.63
+	}
 }
 
 double CRadiation::GetPowerLawRad( double flog_10T, double flog_10n )
