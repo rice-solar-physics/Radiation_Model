@@ -648,8 +648,8 @@ double CRadiation::GetPowerLawRad( double flog_10T )
 
 	return fEmiss;
 	// NOTE: free-free radiation is included in the parameter values for log_10 T > 7.63
-	}
 }
+
 
 double CRadiation::GetPowerLawRad( double flog_10T, double flog_10n )
 {
