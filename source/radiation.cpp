@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <cmath>
 
 #include "radiation.h"
 #include "../../rsp_toolkit/source/file.h"
@@ -644,7 +644,7 @@ double CRadiation::GetPowerLawRad( double flog_10T )
 	    alpha = 1.0/2.0;
 	}
 
-	fEmiss = chi * pow( 10.0, (alpha*flog_10T) );
+	fEmiss = chi * std::pow( 10.0, (alpha*flog_10T) );
 
 	return fEmiss;
 	// NOTE: free-free radiation is included in the parameter values for log_10 T > 7.63
