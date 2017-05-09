@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='utf-8'?>
+<report id="report" title="Documention generator" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <doc>
+This page provides a documentation coverage report. Any undocumented symbols
+are reported here together with the location of where you should document them.
+
+This report contains the following sections:
+
+1. [Coverage](#report/coverage): The documented symbols coverage.
+2. [Arguments](#report/arguments): Errors about undocumented, misspelled function arguments and
+return values.
+3. [References](#report/references): Unresolved cross references.
+</doc>
+  <coverage>
+    <type documented="4" name="class" undocumented="0" />
+    <type documented="0" name="typedef" undocumented="6">
+      <undocumented id="PELEMENT" name="PELEMENT">
+        <location column="1" file="source/element.h" line="164" />
+      </undocumented>
+      <undocumented id="PIONFRAC" name="PIONFRAC">
+        <location column="1" file="source/ionfrac.h" line="259" />
+      </undocumented>
+      <undocumented id="POPTICALLYTHICKION" name="POPTICALLYTHICKION">
+        <location column="1" file="source/OpticallyThick/OpticallyThickIon.h" line="73" />
+      </undocumented>
+      <undocumented id="PPELEMENT" name="PPELEMENT">
+        <location column="1" file="source/element.h" line="165" />
+      </undocumented>
+      <undocumented id="PPOPTICALLYTHICKION" name="PPOPTICALLYTHICKION">
+        <location column="1" file="source/OpticallyThick/OpticallyThickIon.h" line="74" />
+      </undocumented>
+      <undocumented id="PRADIATION" name="PRADIATION">
+        <location column="1" file="source/radiation.h" line="136" />
+      </undocumented>
+    </type>
+    <type documented="4" name="destructor" undocumented="0" />
+    <type documented="3" name="field" undocumented="0" />
+    <type documented="5" name="constructor" undocumented="0" />
+    <type documented="40" name="method" undocumented="20">
+      <undocumented id="CElement::GetEmissivity" name="GetEmissivity">
+        <location column="5" file="source/element.h" line="150" />
+        <location column="1" file="source/element.cpp" line="942" />
+      </undocumented>
+      <undocumented id="CElement::GetEmissivity" name="GetEmissivity">
+        <location column="5" file="source/element.h" line="160" />
+        <location column="1" file="source/element.cpp" line="1350" />
+      </undocumented>
+      <undocumented id="CElement::GetEquilIonFrac" name="GetEquilIonFrac">
+        <location column="5" file="source/element.h" line="145" />
+        <location column="1" file="source/element.cpp" line="756" />
+      </undocumented>
+      <undocumented id="CElement::GetRates" name="GetRates">
+        <location column="5" file="source/element.h" line="140" />
+        <location column="1" file="source/element.cpp" line="594" />
+      </undocumented>
+      <undocumented id="CElement::Getdnibydt" name="Getdnibydt">
+        <location column="2" file="source/element.h" line="155" />
+        <location column="1" file="source/element.cpp" line="1267" />
+      </undocumented>
+      <undocumented id="COpticallyThickIon::GetVolumetricLossRate" name="GetVolumetricLossRate">
+        <location column="5" file="source/OpticallyThick/OpticallyThickIon.h" line="69" />
+        <location column="1" file="source/OpticallyThick/OpticallyThickIon.cpp" line="445" />
+      </undocumented>
+      <undocumented id="COpticallyThickIon::Getkappa_0" name="Getkappa_0">
+        <location column="5" file="source/OpticallyThick/OpticallyThickIon.h" line="64" />
+        <location column="1" file="source/OpticallyThick/OpticallyThickIon.cpp" line="407" />
+      </undocumented>
+      <undocumented id="CRadiation::GetAlldnibydt" name="GetAlldnibydt">
+        <location column="5" file="source/radiation.h" line="118" />
+        <location column="1" file="source/radiation.cpp" line="506" />
+      </undocumented>
+      <undocumented id="CRadiation::GetAlldnibydt" name="GetAlldnibydt">
+        <location column="5" file="source/radiation.h" line="119" />
+        <location column="1" file="source/radiation.cpp" line="524" />
+      </undocumented>
+      <undocumented id="CRadiation::GetEquilIonFrac" name="GetEquilIonFrac">
+        <location column="5" file="source/radiation.h" line="96" />
+        <location column="1" file="source/radiation.cpp" line="245" />
+      </undocumented>
+      <undocumented id="CRadiation::GetFreeFreeRad" name="GetFreeFreeRad">
+        <location column="5" file="source/radiation.h" line="129" />
+        <location column="1" file="source/radiation.cpp" line="708" />
+      </undocumented>
+      <undocumented id="CRadiation::GetPowerLawRad" name="GetPowerLawRad">
+        <location column="5" file="source/radiation.h" line="128" />
+        <location column="1" file="source/radiation.cpp" line="604" />
+      </undocumented>
+      <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
+        <location column="5" file="source/radiation.h" line="110" />
+        <location column="1" file="source/radiation.cpp" line="360" />
+      </undocumented>
+      <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
+        <location column="5" file="source/radiation.h" line="111" />
+        <location column="1" file="source/radiation.cpp" line="382" />
+      </undocumented>
+      <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
+        <location column="5" file="source/radiation.h" line="123" />
+        <location column="1" file="source/radiation.cpp" line="565" />
+      </undocumented>
+      <undocumented id="CRadiation::GetRadiation" name="GetRadiation">
+        <location column="5" file="source/radiation.h" line="124" />
+        <location column="1" file="source/radiation.cpp" line="587" />
+      </undocumented>
+      <undocumented id="CRadiation::Getdnibydt" name="Getdnibydt">
+        <location column="4" file="source/radiation.h" line="117" />
+        <location column="1" file="source/radiation.cpp" line="493" />
+      </undocumented>
+      <undocumented id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
+        <location column="5" file="source/radiation.h" line="101" />
+        <location column="1" file="source/radiation.cpp" line="284" />
+      </undocumented>
+      <undocumented id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
+        <location column="5" file="source/radiation.h" line="102" />
+        <location column="1" file="source/radiation.cpp" line="300" />
+      </undocumented>
+      <undocumented id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
+        <location column="5" file="source/radiation.h" line="103" />
+        <location column="1" file="source/radiation.cpp" line="315" />
+      </undocumented>
+    </type>
+  </coverage>
+  <arguments>
+    <function id="CElement::Initialise" name="Initialise">
+      <location column="5" file="source/element.h" line="129" />
+      <location column="1" file="source/element.cpp" line="35" />
+      <undocumented name="szRatesFilename" />
+      <undocumented name="iZ" />
+      <undocumented name="doEmissCalc" />
+      <undocumented name="szIonFracFilename" />
+      <undocumented name="szEmissFilename" />
+      <undocumented name="szAbundFilename" />
+      <undocumented name="szRangesFilename" />
+    </function>
+    <function id="CElement::SetConfigVars" name="SetConfigVars">
+      <location column="4" file="source/element.h" line="132" />
+      <location column="1" file="source/element.cpp" line="62" />
+      <undocumented name="root" />
+    </function>
+    <function id="CElement::GetAbundance" name="GetAbundance">
+      <location column="5" file="source/element.h" line="135" />
+      <location column="1" file="source/element.cpp" line="532" />
+      <undocumented-return />
+    </function>
+    <function id="CElement::GetRates" name="GetRates">
+      <location column="5" file="source/element.h" line="139" />
+      <location column="1" file="source/element.cpp" line="537" />
+      <undocumented name="flog_10T" />
+      <undocumented name="iIon" />
+      <undocumented name="pfRecRate" />
+      <undocumented name="pfIonRate" />
+    </function>
+    <function id="CElement::GetEquilIonFrac" name="GetEquilIonFrac">
+      <location column="5" file="source/element.h" line="144" />
+      <location column="1" file="source/element.cpp" line="708" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+      <undocumented name="iIon" />
+    </function>
+    <function id="CElement::GetEmissivity" name="GetEmissivity">
+      <location column="5" file="source/element.h" line="149" />
+      <location column="1" file="source/element.cpp" line="848" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+      <undocumented name="iIon" />
+      <undocumented name="flog_10n" />
+    </function>
+    <function id="CElement::Getdnibydt" name="Getdnibydt">
+      <location column="5" file="source/element.h" line="154" />
+      <location column="1" file="source/element.cpp" line="1027" />
+      <undocumented name="pdnibydt" />
+      <undocumented name="flog_10n" />
+      <undocumented name="s_pos" />
+      <undocumented name="pni4" />
+      <undocumented name="pni1" />
+      <undocumented name="pni0" />
+      <undocumented name="pni3" />
+      <undocumented name="pni2" />
+      <undocumented name="s" />
+      <undocumented name="pTimeScale" />
+      <undocumented name="flog_10T" />
+      <undocumented name="pv" />
+      <undocumented name="delta_s" />
+    </function>
+    <function id="CElement::GetEmissivity" name="GetEmissivity">
+      <location column="5" file="source/element.h" line="159" />
+      <location column="1" file="source/element.cpp" line="1345" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+      <undocumented name="iIon" />
+      <undocumented name="flog_10n" />
+      <undocumented name="ni" />
+    </function>
+    <function id="CRadiation::GetEquilIonFrac" name="GetEquilIonFrac">
+      <location column="5" file="source/radiation.h" line="95" />
+      <location column="1" file="source/radiation.cpp" line="222" />
+      <undocumented name="pni" />
+      <undocumented name="flog_10T" />
+      <undocumented name="iZ" />
+    </function>
+    <function id="CRadiation::WriteEquilIonFracToFile" name="WriteEquilIonFracToFile">
+      <location column="5" file="source/radiation.h" line="100" />
+      <location column="1" file="source/radiation.cpp" line="268" />
+      <undocumented name="flog_10T" />
+      <undocumented name="iZ" />
+      <undocumented name="pFile" />
+    </function>
+    <function id="CRadiation::Normalise" name="Normalise">
+      <location column="5" file="source/radiation.h" line="106" />
+      <location column="1" file="source/radiation.cpp" line="330" />
+      <undocumented name="pni" />
+      <undocumented name="fTotal" />
+      <undocumented name="iZ" />
+    </function>
+    <function id="CRadiation::GetRadiation" name="GetRadiation">
+      <location column="5" file="source/radiation.h" line="109" />
+      <location column="1" file="source/radiation.cpp" line="338" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+      <undocumented name="iIon" />
+      <undocumented name="flog_10n" />
+      <undocumented name="iZ" />
+    </function>
+    <function id="CRadiation::Getdnibydt" name="Getdnibydt">
+      <location column="5" file="source/radiation.h" line="116" />
+      <location column="1" file="source/radiation.cpp" line="480" />
+      <undocumented name="pdnibydt" />
+      <undocumented name="flog_10n" />
+      <undocumented name="iZ" />
+      <undocumented name="s_pos" />
+      <undocumented name="pni4" />
+      <undocumented name="pni1" />
+      <undocumented name="pni0" />
+      <undocumented name="pni3" />
+      <undocumented name="pni2" />
+      <undocumented name="s" />
+      <undocumented name="pTimeScale" />
+      <undocumented name="flog_10T" />
+      <undocumented name="pv" />
+      <undocumented name="delta_s" />
+    </function>
+    <function id="CRadiation::GetRadiation" name="GetRadiation">
+      <location column="5" file="source/radiation.h" line="122" />
+      <location column="1" file="source/radiation.cpp" line="543" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+      <undocumented name="iIon" />
+      <undocumented name="flog_10n" />
+      <undocumented name="iZ" />
+      <undocumented name="ni" />
+    </function>
+    <function id="CRadiation::GetPowerLawRad" name="GetPowerLawRad">
+      <location column="5" file="source/radiation.h" line="127" />
+      <location column="1" file="source/radiation.cpp" line="654" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+      <undocumented name="flog_10n" />
+    </function>
+    <function id="COpticallyThickIon::COpticallyThickIon" name="COpticallyThickIon">
+      <location column="5" file="source/OpticallyThick/OpticallyThickIon.h" line="57" />
+      <location column="1" file="source/OpticallyThick/OpticallyThickIon.cpp" line="22" />
+      <undocumented name="iZ" />
+      <undocumented name="atomicDBFilename" />
+      <undocumented name="szIon" />
+    </function>
+    <function id="COpticallyThickIon::GetIonFrac" name="GetIonFrac">
+      <location column="5" file="source/OpticallyThick/OpticallyThickIon.h" line="63" />
+      <location column="1" file="source/OpticallyThick/OpticallyThickIon.cpp" line="289" />
+      <undocumented-return />
+      <undocumented name="flog_10T" />
+    </function>
+    <function id="COpticallyThickIon::GetVolumetricLossRate" name="GetVolumetricLossRate">
+      <location column="5" file="source/OpticallyThick/OpticallyThickIon.h" line="68" />
+      <location column="1" file="source/OpticallyThick/OpticallyThickIon.cpp" line="440" />
+      <undocumented-return />
+      <undocumented name="fLog_10T" />
+      <undocumented name="fX" />
+      <undocumented name="n_e_rho" />
+    </function>
+  </arguments>
+  <references />
+</report>

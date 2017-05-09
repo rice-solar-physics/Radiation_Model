@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<class id="COpticallyThickIon" name="COpticallyThickIon" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief> Optically-thick ion class</brief>
+  <doc>This class holds, sets, and gets all of the radiative emission information
+for the optically-thick ions. The volumetric loss rates for optically-thick
+ions can also be calculating using this class.
+</doc>
+  <constructor id="COpticallyThickIon::COpticallyThickIon" name="COpticallyThickIon">
+    <brief>Constructor</brief>
+    <argument id="COpticallyThickIon::COpticallyThickIon::iZ" name="iZ">
+      <type builtin="yes" name="int" />
+    </argument>
+    <argument id="COpticallyThickIon::COpticallyThickIon::szIon" name="szIon">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+    <argument id="COpticallyThickIon::COpticallyThickIon::atomicDBFilename" name="atomicDBFilename">
+      <type builtin="yes" name="char" qualifier="*" />
+    </argument>
+  </constructor>
+  <destructor id="COpticallyThickIon::~COpticallyThickIon" name="~COpticallyThickIon">
+    <brief>Destructor</brief>
+  </destructor>
+  <method id="COpticallyThickIon::GetIonFrac" name="GetIonFrac">
+    <brief>Functions to return particular elements of ion data</brief>
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="COpticallyThickIon::GetIonFrac::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="COpticallyThickIon::Getkappa_0" name="Getkappa_0">
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="COpticallyThickIon::Getkappa_0::flog_10T" name="flog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="COpticallyThickIon::GetVolumetricLossRate" name="GetVolumetricLossRate">
+    <brief>Function to calculate the optically-thick emission</brief>
+    <doc>fX can be optical depth (HI) or column density (MgII, CaII)</doc>
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::fLog_10T" name="fLog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::fX" name="fX">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::n_e_rho" name="n_e_rho">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+  <method id="COpticallyThickIon::GetVolumetricLossRate" name="GetVolumetricLossRate">
+    <return>
+      <type builtin="yes" name="double" />
+    </return>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::fLog_10T" name="fLog_10T">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::fIonFrac" name="fIonFrac">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::fX" name="fX">
+      <type builtin="yes" name="double" />
+    </argument>
+    <argument id="COpticallyThickIon::GetVolumetricLossRate::n_e_rho" name="n_e_rho">
+      <type builtin="yes" name="double" />
+    </argument>
+  </method>
+</class>
